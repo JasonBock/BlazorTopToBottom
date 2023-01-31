@@ -1,0 +1,14 @@
+﻿<div class="form-group row">
+    <div class="col-sm-2">
+        <label for="vehicleYear">Year</label>
+        <InputNumber class="form-control" id="vehicleYear" placeholder="(ex. 2023)" @bind-Value=automobile.Year></InputNumber>
+    </div>
+    <div class="col-sm-4">
+        <label for="vehicleMake">Make</label>
+        <InputText class="form-control" id="vehicleMake" placeholder="(ex. 'Ford')" @bind-Value=automobile.Make></InputText>
+    </div>
+    <div class="col">
+        <label for="vehicleModel">Model</label>
+        <InputText class="form-control" id="vehicleModel" placeholder="(ex. 'Mustang')" @bind-Value=automobile.Model></InputText>
+    </div>
+</div>

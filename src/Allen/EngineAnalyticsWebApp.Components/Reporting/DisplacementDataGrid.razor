@@ -1,0 +1,14 @@
+﻿@*Blazorise datagrid leveraging library components*@
+<DataGrid TItem="Automobile"
+          Data="@automobileData"
+          Responsive 
+          ShowPager="true"
+          PageSize="5"
+          Sortable="true"
+          @bind-SelectedRow="@selectedAutomobile">
+    <DataGridCommandColumn />
+    <DataGridColumn Field="@nameof(Automobile.Year)" Caption="Year" Editable></DataGridColumn>
+    <DataGridColumn Field="@nameof(Automobile.Make)" Caption="Make" Editable></DataGridColumn>
+    <DataGridColumn Field="@nameof(Automobile.Model)" Caption="Model" Editable></DataGridColumn>
+    <DataGridColumn TItem="Automobile" Field="EngineAnalytics.Displacement" Caption="Engine Displacement" Editable></DataGridColumn>
+</DataGrid>

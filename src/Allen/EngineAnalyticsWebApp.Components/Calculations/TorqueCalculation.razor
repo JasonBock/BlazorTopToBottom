@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNetCore.Components.Forms;
+
+<EditForm Model="@automobile" OnValidSubmit="@HandleValidSubmit" OnInvalidSubmit="@HandleInValidSubmit">
+    <ObjectGraphDataAnnotationsValidator />
+    <Microsoft.AspNetCore.Components.Forms.ValidationSummary />
+
+    <CascadingValue Value="automobile">
+        <AutoGroup></AutoGroup>
+    </CascadingValue>
+
+    <div class="form-group row mt-3">
+        @if (automobile.Torque != null)
+        {
+            <div class="col-sm-6">
+                <label for="engineHorsepower">Engine Horsepower</label>
+                <InputNumber class="form-control" id="engineHorsepower" placeholder="Enter engine horsepower" @bind-Value=automobile.Torque.Horsepower @onclick="ClearForm"></InputNumber>
+            </div>
+            <div class="col-sm-6">
+                <label for="engineRPM">Engine RPM</label>
+                <InputNumber class="form-control" id="engineRPM" placeholder="Enter engine RPM" @bind-Value=automobile.Torque.EngineRPM @onclick="ClearForm"></InputNumber>
+            </div>
+        }
+    </div>
+    <button type="submit" class="btn btn-primary top10">Submit</button>
+    <div class="form-group row mt-3">
+        @if (automobile.EngineAnalytics != null)
+        {
+            <div class="col-sm-5">
+                <label for="engineTorque">Engine Torque (ft lbs)</label>
+                <input type="text" class="form-control" id="engineTorque" @bind-value=automobile.EngineAnalytics.Torque>
+            </div>
+        }
+    </div>
+    <div class="alert @alertClass" role="alert">@statusMessage</div>
+</EditForm>

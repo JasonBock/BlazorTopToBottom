@@ -1,0 +1,34 @@
+﻿@if (automobileData == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    @*Blazorise table leveraging library components*@
+    <Table Hoverable>
+        <TableHeader>
+            <TableRow>
+                <TableHeaderCell>Year</TableHeaderCell>
+                <TableHeaderCell>Make</TableHeaderCell>
+                <TableHeaderCell>Model</TableHeaderCell>
+                <TableHeaderCell>Torque</TableHeaderCell>
+            </TableRow>
+        </TableHeader>
+        <TableBody>
+            @foreach (var auto in automobileData)
+            {
+                <TableRow>
+                    <TableRowCell>@auto.Year</TableRowCell>
+                    <TableRowCell>@auto.Make</TableRowCell>
+                    <TableRowCell>@auto.Model</TableRowCell>
+                    @if (auto.EngineAnalytics != null)
+                    {
+                        <TableRowCell>
+                            @auto.EngineAnalytics.Torque
+                        </TableRowCell>
+                    }
+                </TableRow>
+            }
+        </TableBody>
+    </Table>
+}

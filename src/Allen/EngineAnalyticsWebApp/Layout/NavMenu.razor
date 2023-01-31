@@ -1,0 +1,63 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">Auto Performance App</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+@*<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">*@
+<div class="@NavMenuCssClass">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/engine/calculate-horsepower">
+
+                <span class="oi oi-calculator" aria-hidden="true"></span> Engine Horsepower
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/engine/calculate-displacement">
+                <span class="oi oi-calculator" aria-hidden="true"></span> Engine Displacement
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/engine/calculate-torque">
+                <span class="oi oi-calculator" aria-hidden="true"></span> Engine Torque
+            </NavLink>
+        </div>
+        <div class="nav-item has-submenu px-3">
+            <NavLink class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#reportSubMenu" 
+                     aria-expanded="false" aria-controls="reportSubMenu">
+                <span class="oi oi-wrench" aria-hidden="true"></span> Data Reports
+            </NavLink>
+            <ul class="nav-submenu collapse list-unstyled" id="reportSubMenu">
+                <li class="nav-subitem">
+                    <NavLink href="/horsepower-results">
+                        <span class="oi oi-chevron-right" aria-hidden="true"></span> Horsepower
+                    </NavLink>
+                </li>
+                <li class="nav-subitem">
+                    <NavLink href="/torque-results">
+                        <span class="oi oi-chevron-right" aria-hidden="true"></span> Torque
+                    </NavLink>
+                </li>
+                <li class="nav-subitem">
+                    <NavLink href="/displacement-results">
+                        <span class="oi oi-chevron-right" aria-hidden="true"></span> Displacement
+                    </NavLink>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="/track-weather">
+                <span class="oi oi-rain" aria-hidden="true"></span> Track Weather
+            </NavLink>
+        </div>
+    </nav>
+</div>
