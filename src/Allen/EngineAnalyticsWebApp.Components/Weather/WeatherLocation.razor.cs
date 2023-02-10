@@ -1,10 +1,11 @@
-﻿using EngineAnalyticsWebApp.Components.Weather.Services;
-using Microsoft.AspNetCore.Components;
+﻿
+using EngineAnalyticsWebApp.Components.Weather.Services;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.AspNetCore.Components;
 
-namespace EngineAnalyticsWebApp.UI.Pages.Weather
+namespace EngineAnalyticsWebApp.Components.Weather
 {
-    public partial class TrackWeather
+    public partial class WeatherLocation
     {
         private string title = "Track Weather";
         private string? zipCode;
@@ -23,7 +24,7 @@ namespace EngineAnalyticsWebApp.UI.Pages.Weather
             {
                 // Call service to set zip code
                 await weatherService.SetWeatherZipCode(zipCode);
-            }         
+            }
         }
     }
 }

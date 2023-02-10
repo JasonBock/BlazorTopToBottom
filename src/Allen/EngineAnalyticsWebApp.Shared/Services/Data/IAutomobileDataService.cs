@@ -1,4 +1,4 @@
-﻿using EngineAnalyticsWebApp.Shared.Models;
+﻿using EngineAnalyticsWebApp.Shared.Models.Engine;
 using System;
 using System.Collections.Generic;
 using System.Linq;

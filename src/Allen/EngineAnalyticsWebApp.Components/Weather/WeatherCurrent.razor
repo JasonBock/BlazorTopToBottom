@@ -1,3 +1,44 @@
-﻿<div class="row">
-    Weather current here
-</div>
+﻿@if (currentWeatherData != null && currentWeatherData.Weather != null && currentWeatherData.Main != null && currentWeatherData.Wind != null)
+{
+    <ion-grid>
+        <ion-row>
+            <ion-col size="12">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-card-subtitle>Weather Location</ion-card-subtitle>
+                        <ion-card-title>@currentWeatherData.Name</ion-card-title>
+                    </ion-card-header>
+                    <ion-card-content class="ion-no-padding">
+                        <ion-item-group>
+                            <ion-item>
+                                <ion-label>Current Condition: @currentWeatherData.Weather[0].Main</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Temperature: @currentWeatherData.Main.Temp<sup>o</sup></ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-grid class="ion-no-padding">
+                                    <ion-row>
+                                        <ion-col size="3">
+                                            <ion-label>High: @currentWeatherData.Main.TempMax<sup>o</sup></ion-label>
+                                        </ion-col>
+                                        <ion-col size="3">
+                                            <ion-label>Low: @currentWeatherData.Main.TempMin<sup>o</sup></ion-label>
+                                        </ion-col>
+                                    </ion-row>
+                                </ion-grid>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Humidity: @currentWeatherData.Main.Humidity%</ion-label>
+                            </ion-item>
+                            <ion-item>
+                                <ion-label>Wind Speed: @currentWeatherData.Wind.Speed MPH</ion-label>
+                            </ion-item>
+                        </ion-item-group>
+                    </ion-card-content>
+                </ion-card>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+}
+

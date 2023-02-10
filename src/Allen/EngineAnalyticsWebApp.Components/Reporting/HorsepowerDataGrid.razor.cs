@@ -1,4 +1,4 @@
-﻿using EngineAnalyticsWebApp.Shared.Models;
+﻿using EngineAnalyticsWebApp.Shared.Models.Engine;
 using EngineAnalyticsWebApp.Shared.Services.Data;
 using Microsoft.AspNetCore.Components;
 

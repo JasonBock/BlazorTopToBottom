@@ -1,4 +1,4 @@
-﻿using EngineAnalyticsWebApp.Shared.Models;
+﻿using EngineAnalyticsWebApp.Shared.Models.Engine;
 using Microsoft.AspNetCore.Components;
 
 namespace EngineAnalyticsWebApp.Components.Category

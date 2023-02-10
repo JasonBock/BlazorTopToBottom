@@ -1,5 +1,5 @@
 ﻿using Blazored.LocalStorage;
-using EngineAnalyticsWebApp.Shared.Models;
+using EngineAnalyticsWebApp.Shared.Models.Engine;
 
 namespace EngineAnalyticsWebApp.Shared.Services.Data
 {

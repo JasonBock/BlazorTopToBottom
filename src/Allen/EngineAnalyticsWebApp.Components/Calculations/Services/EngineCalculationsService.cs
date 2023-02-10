@@ -1,4 +1,4 @@
-﻿using EngineAnalyticsWebApp.Shared.Models;
+﻿using EngineAnalyticsWebApp.Shared.Models.Engine;
 
 namespace EngineAnalyticsWebApp.Components.Calculations.Services
 {

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EngineAnalyticsWebApp.Shared.Models
+namespace EngineAnalyticsWebApp.Shared.Models.Weather
 {
-    public class WeatherCurrent
+    public class Future
     {
     }
 }

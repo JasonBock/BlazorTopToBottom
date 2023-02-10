@@ -1,5 +1,4 @@
-﻿
-namespace EngineAnalyticsWebApp.Shared.Models
+﻿namespace EngineAnalyticsWebApp.Shared.Models.Engine
 {
     public class EngineAnalytics
     {

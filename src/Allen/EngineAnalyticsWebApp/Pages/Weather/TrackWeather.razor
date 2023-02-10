@@ -4,11 +4,10 @@
 
 <h3 class="top20">@title</h3>
 
-<p>Select a track or enter a zip code to show weather information</p>
-
 <div class="row">
-    <WeatherLocation></WeatherLocation>
+    <ion-searchbar inputmode="numeric" placeholder="Zip Code" @bind-value="@zipCode" @bind-value:event="oninput" @onkeypress="UpdateZipCode"></ion-searchbar>
 </div>
+@*<WeatherLocation></WeatherLocation>*@
 <div class="row">
     <div class="col">
         <WeatherCurrent></WeatherCurrent>
@@ -17,3 +16,4 @@
         <WeatherFuture></WeatherFuture>
     </div>
 </div>
+
