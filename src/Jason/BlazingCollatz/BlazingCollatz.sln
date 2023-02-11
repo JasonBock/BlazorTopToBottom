@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ServiceHost"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ServerSideHost", "BlazingCollatz.ServerSideHost\BlazingCollatz.ServerSideHost.csproj", "{75280CB2-BBF3-432A-B20E-3BF7419BA67E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebAssemblyHost", "BlazingCollatz.WebAssemblyHost\BlazingCollatz.WebAssemblyHost.csproj", "{763971F2-6210-44D8-BD61-EA836EEDAF3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -40,6 +42,10 @@ Global
 		{75280CB2-BBF3-432A-B20E-3BF7419BA67E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{75280CB2-BBF3-432A-B20E-3BF7419BA67E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{75280CB2-BBF3-432A-B20E-3BF7419BA67E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763971F2-6210-44D8-BD61-EA836EEDAF3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763971F2-6210-44D8-BD61-EA836EEDAF3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763971F2-6210-44D8-BD61-EA836EEDAF3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763971F2-6210-44D8-BD61-EA836EEDAF3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
