@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package CollatzGrpc;
 
-service Collatz {
+service CollatzServiceDefinition {
 	rpc FindLongestSequence (CollatzRequest) returns (CollatzResponse);
 }
 

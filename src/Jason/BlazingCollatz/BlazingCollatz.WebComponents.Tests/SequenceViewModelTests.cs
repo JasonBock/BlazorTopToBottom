@@ -1,5 +1,4 @@
-﻿using BlazingCollatz.WebComponents;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 using Microsoft.JSInterop;
 using Rocks;
 
