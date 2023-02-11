@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
+	<ItemGroup>
+		<SupportedPlatform Include="browser" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Blazored.LocalStorage" Version="4.3.0" />
+		<PackageReference Include="Collatz" Version="1.0.0" />
+		<PackageReference Include="Google.Protobuf" Version="3.21.12" />
+		<PackageReference Include="Grpc.Net.Client" Version="2.51.0" />
+		<PackageReference Include="Grpc.Tools" Version="2.51.0">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+		</PackageReference>
+		<PackageReference Include="Grpc.Net.Client.Web" Version="2.51.0" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="7.0.2" />
+		<PackageReference Include="Spackle" Version="12.0.0" />
+	</ItemGroup>
+	<ItemGroup>
+		<Protobuf Include="..\Protos\collatz.proto" GrpcServices="Client" />
+	</ItemGroup>
+</Project>

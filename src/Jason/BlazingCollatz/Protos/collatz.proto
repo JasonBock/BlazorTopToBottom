@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package CollatzGrpc;
+
+service Collatz {
+	rpc FindLongestSequence (CollatzRequest) returns (CollatzResponse);
+}
+
+message CollatzRequest {
+	int32 start = 1;
+	int32 end = 2;
+}
+
+message CollatzResponse {
+	bytes value = 1;
+	int32 length = 2;
+}
