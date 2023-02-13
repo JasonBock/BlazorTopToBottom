@@ -6,10 +6,10 @@ const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
     .create();
 
 const config = getConfig();
-const exports = await getAssemblyExports(config.mainAssemblyName);
+const dotNetExports = await getAssemblyExports(config.mainAssemblyName);
 //const sequence = exports.CollatzInterop.Generate("400");
 //console.log(sequence.join(", "));
 
 export function getSequence(start) {
-    return exports.CollatzInterop.Generate(start);
+    return dotNetExports.CollatzInterop.Generate(start);
 }

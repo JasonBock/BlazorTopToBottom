@@ -14,17 +14,17 @@
 <body>
     <p>
         <input id="start" type="text" />
-        <button onclick="executeSequence()">Create Sequence</button>
+        <button onclick="getSequence('400')">Create Sequence</button>
         <label id="sequence" />
     </p>
-    <script>
+    <!--<script>
         import { main } from './main.js'
 
         function executeSequence() {
             document.getElementById('sequence').innerText =
                 main.getSequence(document.getElementById('start').innerText);
         }
-    </script>
+    </script>-->
     <script type='module' src="./main.js"></script>
 </body>
 </html>
