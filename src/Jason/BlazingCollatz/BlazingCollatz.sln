@@ -3,24 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebComponents", "BlazingCollatz.WebComponents\BlazingCollatz.WebComponents.csproj", "{B3811256-3D5B-489A-8126-8582473E5F6E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebComponents", "BlazingCollatz.WebComponents\BlazingCollatz.WebComponents.csproj", "{B3811256-3D5B-489A-8126-8582473E5F6E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0B07CBCC-1F7C-4969-81F5-2F34DA34059A}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		Protos\collatz.proto = Protos\collatz.proto
 		Directory.Build.props = Directory.Build.props
+		value.txt = value.txt
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebComponents.Tests", "BlazingCollatz.WebComponents.Tests\BlazingCollatz.WebComponents.Tests.csproj", "{86CC1DF6-A1CC-409D-9FA5-A26DBC4C4DFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebComponents.Tests", "BlazingCollatz.WebComponents.Tests\BlazingCollatz.WebComponents.Tests.csproj", "{86CC1DF6-A1CC-409D-9FA5-A26DBC4C4DFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ServiceHost", "BlazingCollatz.ServiceHost\BlazingCollatz.ServiceHost.csproj", "{EA9E26EC-170C-4540-B6B7-01709CDD156E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ServiceHost", "BlazingCollatz.ServiceHost\BlazingCollatz.ServiceHost.csproj", "{EA9E26EC-170C-4540-B6B7-01709CDD156E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ServerSideHost", "BlazingCollatz.ServerSideHost\BlazingCollatz.ServerSideHost.csproj", "{75280CB2-BBF3-432A-B20E-3BF7419BA67E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ServerSideHost", "BlazingCollatz.ServerSideHost\BlazingCollatz.ServerSideHost.csproj", "{75280CB2-BBF3-432A-B20E-3BF7419BA67E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebAssemblyHost", "BlazingCollatz.WebAssemblyHost\BlazingCollatz.WebAssemblyHost.csproj", "{763971F2-6210-44D8-BD61-EA836EEDAF3C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebAssemblyHost", "BlazingCollatz.WebAssemblyHost\BlazingCollatz.WebAssemblyHost.csproj", "{763971F2-6210-44D8-BD61-EA836EEDAF3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebTests", "BlazingCollatz.WebTests\BlazingCollatz.WebTests.csproj", "{F0284052-9440-4F39-BCB5-89F87ED3AA0B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebTests", "BlazingCollatz.WebTests\BlazingCollatz.WebTests.csproj", "{F0284052-9440-4F39-BCB5-89F87ED3AA0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +55,10 @@ Global
 		{F0284052-9440-4F39-BCB5-89F87ED3AA0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0284052-9440-4F39-BCB5-89F87ED3AA0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0284052-9440-4F39-BCB5-89F87ED3AA0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

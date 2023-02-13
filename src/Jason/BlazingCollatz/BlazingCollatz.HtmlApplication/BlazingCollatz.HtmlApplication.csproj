@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<WasmMainJSPath>main.js</WasmMainJSPath>
+		<OutputType>Exe</OutputType>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="index.html" />
+		<WasmExtraFilesToDeploy Include="main.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Collatz" Version="1.0.0" />
+	</ItemGroup>
+</Project>
