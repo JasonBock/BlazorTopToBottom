@@ -8,6 +8,7 @@ const { setModuleImports, getAssemblyExports, getConfig } = await dotnet
 const config = getConfig();
 const dotNetExports = await getAssemblyExports(config.mainAssemblyName);
 
+
 export function getSequence(start) {
     return dotNetExports.CollatzInterop.Generate(start);
 }

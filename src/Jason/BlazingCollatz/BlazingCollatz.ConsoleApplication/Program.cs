@@ -1,0 +1,1 @@
+Console.WriteLine("BlazingCollatz.ConsoleApplication");
