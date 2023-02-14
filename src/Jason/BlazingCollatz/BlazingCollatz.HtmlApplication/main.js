@@ -13,3 +13,7 @@ const exports = await getAssemblyExports(config.mainAssemblyName);
 export function getSequence(start) {
     return exports.CollatzInterop.Generate(start);
 }
+
+export function testLogger(message) {
+    console.log(message);
+}
