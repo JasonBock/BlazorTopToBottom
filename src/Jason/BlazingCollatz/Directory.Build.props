@@ -1,5 +1,6 @@
 <Project>
 	<PropertyGroup>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<Authors>Jason Bock</Authors>
 		<Copyright>Copyright © 2023</Copyright>
 		<ImplicitUsings>enable</ImplicitUsings>
