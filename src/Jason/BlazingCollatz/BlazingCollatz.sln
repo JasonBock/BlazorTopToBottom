@@ -10,6 +10,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.editorconfig = .editorconfig
 		Protos\collatz.proto = Protos\collatz.proto
 		Directory.Build.props = Directory.Build.props
+		Directory.Packages.props = Directory.Packages.props
 		value.txt = value.txt
 	EndProjectSection
 EndProject
@@ -23,9 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebAssemblyH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebTests", "BlazingCollatz.WebTests\BlazingCollatz.WebTests.csproj", "{F0284052-9440-4F39-BCB5-89F87ED3AA0B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{4C9BF041-F77C-42F8-BE0E-F63DB03A4C25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ConsoleApplication", "BlazingCollatz.ConsoleApplication\BlazingCollatz.ConsoleApplication.csproj", "{2E20055A-D839-41E5-BCED-68DEDD09FC65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ConsoleApplication", "BlazingCollatz.ConsoleApplication\BlazingCollatz.ConsoleApplication.csproj", "{2E20055A-D839-41E5-BCED-68DEDD09FC65}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

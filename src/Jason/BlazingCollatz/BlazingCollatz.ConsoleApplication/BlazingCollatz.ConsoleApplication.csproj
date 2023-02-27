@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
 		<OutputType>Exe</OutputType>
@@ -7,6 +7,6 @@
 		<WasmMainJSPath>main.mjs</WasmMainJSPath>
 	</PropertyGroup>
 	<ItemGroup>
-		<PackageReference Include="Collatz" Version="1.0.0" />
+		<PackageReference Include="Collatz" />
 	</ItemGroup>
 </Project>
