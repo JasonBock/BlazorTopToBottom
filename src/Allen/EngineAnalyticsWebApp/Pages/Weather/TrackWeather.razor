@@ -4,10 +4,12 @@
 
 <h3 class="top20">@title</h3>
 
-<div class="row">
+<MessageComponent Message="Hello from the lazy loaded message component"></MessageComponent>
+
+@*<div class="row">
     <ion-searchbar inputmode="numeric" placeholder="Zip Code" @bind-value="@zipCode" @bind-value:event="oninput" @onkeypress="UpdateZipCode"></ion-searchbar>
-</div>
-@*<WeatherLocation></WeatherLocation>*@
+</div>*@
+<WeatherLocation></WeatherLocation>
 <div class="row">
     <div class="col">
         <WeatherCurrent></WeatherCurrent>

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
 
 	<PropertyGroup>
 		<TargetFramework>net7.0</TargetFramework>
@@ -19,6 +19,17 @@
 
 	<ItemGroup>
 		<ProjectReference Include="..\EngineAnalyticsWebApp.Components\EngineAnalyticsWebApp.Components.csproj" />
+		<ProjectReference Include="..\EngineAnalyticsWebApp.TestLazy\EngineAnalyticsWebApp.TestLazy.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<BlazorWebAssemblyLazyLoad Include="EngineAnalyticsWebApp.TestLazy.dll" />
+		<!--<BlazorWebAssemblyLazyLoad Include="EngineAnalyticsWebApp.Components.dll" />
+		<BlazorWebAssemblyLazyLoad Include="EngineAnalyticsWebApp.Shared.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Blazorise.Bootstrap.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Blazorise.Bootstrap5.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Blazorise.DataGrid.dll" />
+		<BlazorWebAssemblyLazyLoad Include="Blazorise.Icons.FontAwesome.dll" />-->
 	</ItemGroup>
 
 	<ItemGroup>
@@ -27,12 +38,6 @@
 
 	<ItemGroup>
 		<Folder Include="wwwroot\images\" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<None Update="scss\custom.css">
-			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-		</None>
 	</ItemGroup>
 
 	<Target Name="CopyCssBundles" AfterTargets="AfterBuild">
