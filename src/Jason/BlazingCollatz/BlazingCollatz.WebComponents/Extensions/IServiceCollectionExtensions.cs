@@ -7,15 +7,15 @@ namespace BlazingCollatz.WebComponents.Extensions;
 
 public static class IServiceCollectionExtensions 
 {
-	public static void AddWebComponents(this IServiceCollection @this)
+	public static void AddWebComponents(this IServiceCollection self)
 	{
-		@this.AddTransient<SequenceViewModel>();
-		@this.AddSingleton(services =>
+		self.AddTransient<SequenceViewModel>();
+		self.AddSingleton(services =>
 		{
 			var httpClient = new HttpClient(new GrpcWebHandler(GrpcWebMode.GrpcWeb, new HttpClientHandler()));
-			var channel = GrpcChannel.ForAddress("https://localhost:3113", new GrpcChannelOptions { HttpClient = httpClient });
+			var channel = GrpcChannel.ForAddress("http://localhost:5060", new GrpcChannelOptions { HttpClient = httpClient });
 			return new CollatzGrpc.CollatzServiceDefinition.CollatzServiceDefinitionClient(channel);
 		});
-		@this.AddBlazoredLocalStorage();
+		self.AddBlazoredLocalStorage();
 	}
 }

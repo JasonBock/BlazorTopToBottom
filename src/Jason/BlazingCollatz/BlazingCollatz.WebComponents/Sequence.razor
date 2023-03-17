@@ -72,7 +72,7 @@
         {
             try
             {
-                var sequence = CollatzSequenceGenerator.Generate(value);
+                var sequence = CollatzSequenceGenerator.Generate<BigInteger>(value);
                 this.currentSequence = string.Join(", ", sequence);
                 this.labels = Enumerable.Range(1, sequence.Length).Select(_ => _.ToString()).ToArray();
                 await localStorage.SetItemAsync(

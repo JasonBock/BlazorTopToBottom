@@ -21,7 +21,7 @@ namespace BlazingCollatz.WebComponents
 			{
 				try
 				{
-					var sequence = CollatzSequenceGenerator.Generate(value);
+					var sequence = CollatzSequenceGenerator.Generate<BigInteger>(value);
 					this.CurrentSequence = string.Join(", ", sequence);
 					this.Sequence = sequence.Select(_ => (int)_).ToArray();
 					this.Labels = Enumerable.Range(1, sequence.Length).Select(_ => _.ToString()).ToArray();
