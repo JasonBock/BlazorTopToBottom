@@ -29,7 +29,10 @@ namespace EngineAnalyticsWebApp.Components.Weather
                 // Note prior to this call, you will not see this script as a resource in the browser
                 module = await JS.InvokeAsync<IJSObjectReference>(
                     "import", "./_content/EngineAnalyticsWebApp.Components/Weather/WeatherLocation.razor.js");
+                    // "import", "./_content/EngineAnalyticsWebApp.Components/bundle.min.js");
             }
+
+            // await Alert("The bundle file indeed works, and JS interop is still intact.");
         }
 
         public async Task UpdateZipCode(KeyboardEventArgs e)

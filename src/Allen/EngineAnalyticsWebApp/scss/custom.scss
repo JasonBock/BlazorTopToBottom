@@ -1,24 +1,27 @@
-﻿/*@import "bootstrap/scss/_functions.scss";
+﻿
+/* Override Bootstrap5 variables and styles here */
+/* Do not edit any of the files directly in /bootstrap/scss */
+//$primary: #f34b1f;
+
+/* turn off rounding (i.e. input boxes)  */
+//$enable-rounded: false;
+
+/* Import either all of Bootstrap, or specific files after overriding above*/
+@import "bootstrap/scss/bootstrap.scss";
+/*@import "bootstrap/scss/_functions.scss";
 @import "bootstrap/scss/_variables.scss";
 @import "bootstrap/scss/_mixins.scss";
 @import "bootstrap/scss/_nav.scss";
-@import "bootstrap/scss/_navbar.scss";
+@import "bootstrap/scss/_navbar.scss";*/
 
-$nav-link-padding-y: 1.2rem;
-$--bs-nav-link-padding-x: 2.5rem;
 
-.nav-link {
-    $nav-link-padding-y: 1.2rem;
-    $--bs-nav-link-padding-x: 2.5rem;
-}*/
-@import "bootstrap/scss/bootstrap.scss";
 @import url('../lib/open-iconic/font/css/open-iconic-bootstrap.min.css');
 
 /* Colors */
 $blue-link: #0071c1;
 $white-primary-button: #fff;
-$blue-primary-button-bg: #1b6ec2;
-$blue-primary-button-bc: #1861ac;
+$green-primary-button-bg: #26b050;
+$green-primary-button-bc: #1e6b2d;
 
 
 html, body {
@@ -50,11 +53,12 @@ a, .btn-link {
     color: $blue-link;
 }
 
-.btn-primary {
+/* This will override the Bootstrap overrides with a lower level specificity*/
+/*.btn-primary {
     color: $white-primary-button;
-    background-color: $blue-primary-button-bg;
-    border-color: $blue-primary-button-bc;
-}
+    background-color: $green-primary-button-bg;
+    border-color: $green-primary-button-bc;
+}*/
 
 .content {
     padding-top: 1.1rem;

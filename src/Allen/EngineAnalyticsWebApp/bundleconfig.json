@@ -1,0 +1,12 @@
+[
+  {
+    "outputFileName": "wwwroot/css/bundle.min.css",
+    "inputFiles": [
+      //"wwwroot/css/custom.css",
+      "wwwroot/css/app.css"
+    ],
+    "minify": {
+      "enabled": true
+    }
+  }
+]
