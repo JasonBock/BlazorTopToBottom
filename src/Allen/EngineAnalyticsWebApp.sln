@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EngineAnalyticsWebApp.Share
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3. Blazor Shared", "3. Blazor Shared", "{330FD105-EF39-4E2C-ABC4-259C7488167B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EngineAnalyticsWebApp.TestLazy", "EngineAnalyticsWebApp.TestLazy\EngineAnalyticsWebApp.TestLazy.csproj", "{59EDF3DC-CD2A-45BD-9607-F38007B0C30D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{178BCEB2-B34F-4C4F-93A0-1766304E5EAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{178BCEB2-B34F-4C4F-93A0-1766304E5EAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{178BCEB2-B34F-4C4F-93A0-1766304E5EAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59EDF3DC-CD2A-45BD-9607-F38007B0C30D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59EDF3DC-CD2A-45BD-9607-F38007B0C30D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59EDF3DC-CD2A-45BD-9607-F38007B0C30D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59EDF3DC-CD2A-45BD-9607-F38007B0C30D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -41,6 +47,7 @@ Global
 		{74B42974-C692-4D55-9F6C-539A02A89100} = {E7C3EA3A-01E5-450B-90FD-D1AF89299310}
 		{DC180EA7-1BA2-4C6B-B179-B4E1F053D51B} = {2803CD74-FFC1-4034-8FF9-1D069127D25D}
 		{178BCEB2-B34F-4C4F-93A0-1766304E5EAD} = {330FD105-EF39-4E2C-ABC4-259C7488167B}
+		{59EDF3DC-CD2A-45BD-9607-F38007B0C30D} = {2803CD74-FFC1-4034-8FF9-1D069127D25D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {06F47609-F7A5-4032-8388-9047B6E99E30}

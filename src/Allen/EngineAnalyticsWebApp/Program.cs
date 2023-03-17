@@ -5,7 +5,9 @@ using Blazorise.Icons.FontAwesome;
 using EngineAnalyticsWebApp.Components.Calculations.Services;
 using EngineAnalyticsWebApp.Components.Weather.Services;
 using EngineAnalyticsWebApp.Shared.Services.Data;
+using EngineAnalyticsWebApp.Shared.Services.Factories;
 using EngineAnalyticsWebApp.UI;
+using EngineAnalyticsWebApp.UI.Services;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
@@ -19,8 +21,8 @@ builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.
 builder.Services.AddBlazoredLocalStorageAsSingleton();
 builder.Services.AddScoped<IEngineCalculationsService, EngineCalculationsService>();
 builder.Services.AddScoped<IAutomobileDataService, AutomobileLocalStorageService>();
+// Using a singleton here purposely because the WeatherService holds state and using a scoped service won't allow that to persist
 builder.Services.AddSingleton<IWeatherService, WeatherService>();
-//builder.Services.AddScoped<IWeatherDataService, WeatherDataService>();
 builder.Services.AddHttpClient<IWeatherDataService, WeatherDataService>(client => client.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/"));
 builder.Services.AddBlazorise(options =>
 {
@@ -28,5 +30,8 @@ builder.Services.AddBlazorise(options =>
 })
     .AddBootstrapProviders()
     .AddFontAwesomeIcons();
+
+// Lazy loaded assemblies must reply on factories for service instantiation
+builder.Services.AddScoped<IMessageServiceFactory, MessageServiceFactory>();
 
 await builder.Build().RunAsync();

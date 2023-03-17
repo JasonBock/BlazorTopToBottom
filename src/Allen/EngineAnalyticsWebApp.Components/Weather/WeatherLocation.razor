@@ -1,3 +1,10 @@
 ﻿<div class="row">
-    <ion-searchbar inputmode="numeric" placeholder="Zip Code" @bind-value="@zipCode" @bind-value:event="oninput" @onkeypress="UpdateZipCode"></ion-searchbar>
+    <div class="col-8">
+        <ion-searchbar inputmode="numeric" placeholder="Zip Code" @bind-value="@zipCode" @bind-value:event="oninput" @onkeypress="UpdateZipCode"></ion-searchbar>
+    </div>
+    <div class="col-4">
+        <ion-button color="light" @onclick="useCurrentGeolocation">
+            <ion-icon name="locate-outline" size="large"></ion-icon>
+        </ion-button>
+    </div>
 </div>
