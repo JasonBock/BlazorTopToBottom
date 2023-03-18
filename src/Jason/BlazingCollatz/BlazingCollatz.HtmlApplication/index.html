@@ -19,13 +19,40 @@
     <p>
         <label id="sequence" />
     </p>
+
+    <p>
+        <button type="button" id="findLongestSequenceSequentiallyButton">Find Longest Sequence Sequentially</button>
+    </p>
+    <p>
+        <label id="longestSequenceSequentially" />
+    </p>
+
+    <p>
+        <button type="button" id="findLongestSequenceInParallelButton">Find Longest Sequence In Parallel</button>
+    </p>
+    <p>
+        <label id="longestSequenceInParallel" />
+    </p>
+
     <script type="module">
-        import { getSequence } from './main.js';
+        import { getSequence, findLongestSequenceSequentially, findLongestSequenceInParallel } from './main.js';
 
         document.querySelector('#sequenceButton')
             .addEventListener('click', function () {
                 document.getElementById('sequence').innerText =
                     getSequence(document.getElementById('start').value).join(', ');
+            });
+
+        document.querySelector('#findLongestSequenceSequentiallyButton')
+            .addEventListener('click', function () {
+                document.getElementById('longestSequenceSequentially').innerText =
+                    findLongestSequenceSequentially();
+            });
+
+        document.querySelector('#findLongestSequenceInParallelButton')
+            .addEventListener('click', function () {
+                document.getElementById('longestSequenceInParallel').innerText =
+                    findLongestSequenceInParallel();
             });
     </script>
 </body>
