@@ -11,6 +11,10 @@
 	</PropertyGroup>
 
 	<ItemGroup>
+	  <Content Remove="bundleconfig.json" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Blazorise.Bootstrap" Version="1.1.6" />
 		<PackageReference Include="Blazorise.DataGrid" Version="1.1.6" />
 		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.1.6" />
@@ -42,6 +46,10 @@
 
 	<ItemGroup>
 		<Folder Include="wwwroot\images\" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Include="bundleconfig.json" />
 	</ItemGroup>
 
 	<Target Name="CopyCssBundles" AfterTargets="AfterBuild">
