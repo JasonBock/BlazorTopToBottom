@@ -17,7 +17,7 @@ namespace EngineAnalyticsWebApp.Shared.Services.Data
             {
 
                 // Build out query string parameters for Open Weather API
-                var requesturi = $"""weather?zip={zipCode}&units=imperial&appid=e6ffd5da204bed35e83db04a083b382b""";
+                var requesturi = $"weather?zip={zipCode}&units=imperial&appid=e6ffd5da204bed35e83db04a083b382b";
                 
                 var results = await http.GetFromJsonAsync<Current>(requesturi);
                 return results ?? new Current();

@@ -7,11 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="bundleconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <SassFile Remove="Calculations\DisplacementCalculation.razor.scss" />
   </ItemGroup>
 
   <ItemGroup>
     <Content Include="Calculations\DisplacementCalculation.razor.scss" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bundleconfig.json" />
   </ItemGroup>
 
 
