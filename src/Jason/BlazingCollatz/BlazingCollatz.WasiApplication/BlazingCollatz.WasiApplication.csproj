@@ -1,0 +1,9 @@
+<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<PackageReference Include="Wasi.Sdk" />
+	</ItemGroup>
+</Project>

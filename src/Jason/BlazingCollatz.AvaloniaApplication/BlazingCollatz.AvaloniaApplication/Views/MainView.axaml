@@ -5,7 +5,8 @@
              xmlns:vm="clr-namespace:BlazingCollatz.AvaloniaApplication.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="BlazingCollatz.AvaloniaApplication.Views.MainView"
-             x:DataType="vm:MainViewModel">
+             x:DataType="vm:MainViewModel"
+			 FontSize="24">
 	<Design.DataContext>
 		<!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -29,6 +30,8 @@
 		<TextBox Name="StartingValue" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="100" />
 		
 		<Button Grid.Row="2" Grid.Column="0" Click="OnButtonClick">Calculate</Button>
-		<TextBlock Name="Results" Grid.Row="2" Grid.RowSpan="2" Grid.Column="1" TextWrapping="Wrap" />
+		<ScrollViewer Grid.Row="2" Grid.RowSpan="2" Grid.Column="1">
+			<TextBlock Name="Results" TextWrapping="Wrap" />
+		</ScrollViewer>
 	</Grid>
 </UserControl>
