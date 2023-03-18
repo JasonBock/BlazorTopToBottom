@@ -16,7 +16,7 @@
 @code {
     string parallelResults = string.Empty;
     string sequentialResults = string.Empty;
-    private Range<int> range = new Range<int>(50_000, 60_000);
+    private Range<BigInteger> range = new Range<BigInteger>(new BigInteger(250_000), new BigInteger(300_000));
 
     public void OnCreateSequenceSequentially()
     {
@@ -58,13 +58,13 @@
         this.StateHasChanged();
     }
 
-    private static (BigInteger value, int sequenceLength) FindLongestSequence(Range<int> range)
+    private static (BigInteger value, int sequenceLength) FindLongestSequence(Range<BigInteger> range)
     {
         (BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
 
         for (var i = range.Start; i < range.End; i++)
         {
-            var sequence = CollatzSequenceGenerator.Generate(i);
+            var sequence = CollatzSequenceGenerator.Generate<BigInteger>(i);
 
             if (sequence.Length > result.sequenceLength)
             {

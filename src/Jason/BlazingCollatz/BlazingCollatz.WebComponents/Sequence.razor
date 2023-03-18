@@ -1,7 +1,6 @@
 ﻿@using Blazored.LocalStorage
 @using Collatz
 @using System.IO
-@using System.Numerics
 
 @page "/sequence"
 @page "/sequence/{start}"
@@ -9,6 +8,7 @@
 @inject IJSRuntime JSRuntime
 @inject ILocalStorageService localStorage
 @inject NavigationManager manager
+
 <h1>Sequence</h1>
 
 <Geolocation />
@@ -35,7 +35,7 @@
         using var stream = new StreamReader(e.File.OpenReadStream(e.File.Size));
         var content = await stream.ReadLineAsync();
 
-        if (BigInteger.TryParse(content, out var value))
+        if (int.TryParse(content, out var value))
         {
             this.Start = content;
         }
@@ -68,20 +68,20 @@
         var module = await this.JSRuntime.InvokeAsync<IJSObjectReference>(
              Constants.Import, Constants.ChartsFileLocation);
 
-        if (BigInteger.TryParse(this.Start, out var value))
+        if (int.TryParse(this.Start, out var value))
         {
             try
             {
-                var sequence = CollatzSequenceGenerator.Generate<BigInteger>(value);
+                var sequence = CollatzSequenceGenerator.Generate<int>(value);
                 this.currentSequence = string.Join(", ", sequence);
                 this.labels = Enumerable.Range(1, sequence.Length).Select(_ => _.ToString()).ToArray();
                 await localStorage.SetItemAsync(
                     $"{nameof(Sequence)}.{nameof(Start)}", this.Start);
                 await module.InvokeAsync<object>(Constants.ChartsMethod,
                     this.chartReference,
-                    sequence.Select(_ => (int)_).ToArray(), this.labels);
+                    sequence.ToArray(), this.labels);
             }
-            catch (ArgumentException)
+            catch (OverflowException)
             {
                 this.currentSequence = $"The value, {value}, is incorrect.";
                 this.labels = Array.Empty<string>();

@@ -5,17 +5,7 @@
 	<ItemGroup>
 		<PackageReference Include="Blazored.LocalStorage" />
 		<PackageReference Include="Collatz" />
-		<PackageReference Include="Google.Protobuf" />
-		<PackageReference Include="Grpc.Net.Client" />
-		<PackageReference Include="Grpc.Tools">
-			<PrivateAssets>all</PrivateAssets>
-			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-		</PackageReference>
-		<PackageReference Include="Grpc.Net.Client.Web" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" />
 		<PackageReference Include="Spackle" />
-	</ItemGroup>
-	<ItemGroup>
-		<Protobuf Include="..\Protos\collatz.proto" GrpcServices="Client" />
 	</ItemGroup>
 </Project>
