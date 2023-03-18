@@ -16,6 +16,10 @@ export function findLongestSequenceSequentially() {
     return dotNetExports.CollatzInterop.FindLongestSequenceSequentially();
 }
 
-export function findLongestSequenceInParallel() {
-    return dotNetExports.CollatzInterop.FindLongestSequenceInParallel();
+export function findLongestSequenceInParallelUsingThreads() {
+    return dotNetExports.CollatzInterop.FindLongestSequenceInParallelUsingThreads();
+}
+
+export function findLongestSequenceInParallelUsingTasks() {
+    return dotNetExports.CollatzInterop.FindLongestSequenceInParallelUsingTasks();
 }

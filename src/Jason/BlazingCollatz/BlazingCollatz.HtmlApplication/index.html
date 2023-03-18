@@ -28,14 +28,21 @@
     </p>
 
     <p>
-        <button type="button" id="findLongestSequenceInParallelButton">Find Longest Sequence In Parallel</button>
+        <button type="button" id="findLongestSequenceInParallelUsingThreadsButton">Find Longest Sequence In Parallel (Threads)</button>
     </p>
     <p>
-        <label id="longestSequenceInParallel" />
+        <label id="longestSequenceInParallelUsingThreads" />
+    </p>
+
+    <p>
+        <button type="button" id="findLongestSequenceInParallelUsingTasksButton">Find Longest Sequence In Parallel (Tasks)</button>
+    </p>
+    <p>
+        <label id="longestSequenceInParallelUsingTasks" />
     </p>
 
     <script type="module">
-        import { getSequence, findLongestSequenceSequentially, findLongestSequenceInParallel } from './main.js';
+        import { getSequence, findLongestSequenceSequentially, findLongestSequenceInParallelUsingThreads, findLongestSequenceInParallelUsingTasks } from './main.js';
 
         document.querySelector('#sequenceButton')
             .addEventListener('click', function () {
@@ -49,10 +56,16 @@
                     findLongestSequenceSequentially();
             });
 
-        document.querySelector('#findLongestSequenceInParallelButton')
+        document.querySelector('#findLongestSequenceInParallelUsingThreadsButton')
             .addEventListener('click', function () {
-                document.getElementById('longestSequenceInParallel').innerText =
-                    findLongestSequenceInParallel();
+                document.getElementById('longestSequenceInParallelUsingThreads').innerText =
+                    findLongestSequenceInParallelUsingThreads();
+            });
+
+        document.querySelector('#findLongestSequenceInParallelUsingTasksButton')
+            .addEventListener('click', function () {
+                document.getElementById('longestSequenceInParallelUsingTasks').innerText =
+                    findLongestSequenceInParallelUsingTasks();
             });
     </script>
 </body>

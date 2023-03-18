@@ -27,11 +27,11 @@ public partial class CollatzInterop
 	}
 
 	[JSExport]
-	public static string FindLongestSequenceInParallel()
+	public static string FindLongestSequenceInParallelUsingThreads()
 	{
 		var stopwatch = Stopwatch.StartNew();
-		var tasks = new List<Task<(BigInteger value, int sequenceLength)>>();
 		var ranges = range.Partition(8);
+
 		var events = new List<ManualResetEvent>();
 		var threadResults = new List<(BigInteger value, int sequenceLength)>();
 
@@ -64,12 +64,19 @@ public partial class CollatzInterop
 		stopwatch.Stop();
 
 		return $"Longest sequence in range {CollatzInterop.range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
+	}
 
-		/*
-		for (var i = 0; i < Environment.ProcessorCount; i++)
+	[JSExport]
+	public static string FindLongestSequenceInParallelUsingTasks()
+	{
+		var stopwatch = Stopwatch.StartNew();
+		var ranges = range.Partition(8);
+		var tasks = new List<Task<(BigInteger value, int sequenceLength)>>();
+
+		for (var i = 0; i < ranges.Length; i++)
 		{
-			var r = ranges[i];
-			tasks.Add(Task.Run(() => FindLongestSequence(r)));
+			var range = ranges[i];
+			tasks.Add(Task.Run(() => FindLongestSequence(range)));
 		}
 
 #pragma warning disable CA1416 // Validate platform compatibility
@@ -90,7 +97,6 @@ public partial class CollatzInterop
 		stopwatch.Stop();
 
 		return $"Longest sequence in range {CollatzInterop.range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
-		*/
 	}
 
 	private static (BigInteger value, int sequenceLength) FindLongestSequence(Range<BigInteger> range)
