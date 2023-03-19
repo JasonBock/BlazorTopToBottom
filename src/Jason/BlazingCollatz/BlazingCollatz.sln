@@ -25,9 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.HtmlApplicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ConsoleApplication", "BlazingCollatz.ConsoleApplication\BlazingCollatz.ConsoleApplication.csproj", "{2E20055A-D839-41E5-BCED-68DEDD09FC65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasiApplication", "BlazingCollatz.WasiApplication\BlazingCollatz.WasiApplication.csproj", "{CD0919F4-3C2F-4C70-A682-BC562B7A236E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasiApplication", "BlazingCollatz.WasiApplication\BlazingCollatz.WasiApplication.csproj", "{CD0919F4-3C2F-4C70-A682-BC562B7A236E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{91CCED3F-3BDE-423B-8B72-D44749F23FB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{91CCED3F-3BDE-423B-8B72-D44749F23FB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
