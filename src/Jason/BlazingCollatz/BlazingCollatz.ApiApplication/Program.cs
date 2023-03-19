@@ -11,8 +11,6 @@ var builder = WebApplication.CreateBuilder(args).UseWasiConnectionListener();
 
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello, world! See also: /weatherforecast");
-
 app.MapGet("/collatz/{value}", (BigInteger value) =>
 {
 	if(value > BigInteger.One)
