@@ -1,0 +1,10 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<PackageReference Include="Wasi.AspNetCore.Server.Native" />
+		<PackageReference Include="Wasi.Sdk" />
+	</ItemGroup>
+	<PropertyGroup>
+		<WasiRunnerArgs>--tcplisten localhost:8080 --env ASPNETCORE_URLS=http://localhost:8080</WasiRunnerArgs>
+	</PropertyGroup>
+</Project>

@@ -29,6 +29,29 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasiApplicat
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{91CCED3F-3BDE-423B-8B72-D44749F23FB5}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "publish", "BlazingCollatz.WebAssemblyHost\bin\Release\net7.0\browser-wasm\publish\", "{B4A93BF1-6BD7-4115-8BC0-D396EA2B7813}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_58169"
+		Debug.AspNetCompiler.PhysicalPath = "BlazingCollatz.WebAssemblyHost\bin\Release\net7.0\browser-wasm\publish\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58169\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_58169"
+		Release.AspNetCompiler.PhysicalPath = "BlazingCollatz.WebAssemblyHost\bin\Release\net7.0\browser-wasm\publish\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_58169\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "58169"
+		SlnRelativePath = "BlazingCollatz.WebAssemblyHost\bin\Release\net7.0\browser-wasm\publish\"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{2BA078C5-7B89-43D6-AEE0-F35704224D68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +94,14 @@ Global
 		{91CCED3F-3BDE-423B-8B72-D44749F23FB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91CCED3F-3BDE-423B-8B72-D44749F23FB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91CCED3F-3BDE-423B-8B72-D44749F23FB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4A93BF1-6BD7-4115-8BC0-D396EA2B7813}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A93BF1-6BD7-4115-8BC0-D396EA2B7813}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4A93BF1-6BD7-4115-8BC0-D396EA2B7813}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4A93BF1-6BD7-4115-8BC0-D396EA2B7813}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
