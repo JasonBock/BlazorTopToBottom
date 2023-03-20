@@ -41,9 +41,6 @@ public partial class Geolocation
 	{
 		GC.SuppressFinalize(this);
 
-		if (this.reference is not null)
-		{
-			this.reference.Dispose();
-		}
+		this.reference?.Dispose();
 	}
 }
