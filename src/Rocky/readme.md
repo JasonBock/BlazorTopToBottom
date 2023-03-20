@@ -14,3 +14,12 @@ Example showing how to use Blazor components in a Blazor MAUI hybrid app.
 
 https://github.com/missingchildrenmn/KidsIdKit
 
+## Blazor Authentication
+
+Example showing how client-side authentication works behind the scenes.
+
+https://github.com/rockfordlhotka/BlazorDive/tree/main/BlazorClientAuthentication
+
+Example showing how server-side authentication works behind the scenes.
+
+https://github.com/rockfordlhotka/BlazorDive/tree/main/BlazorServerAuthentication
