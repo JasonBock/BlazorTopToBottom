@@ -14,6 +14,10 @@ Example showing how to use Blazor components in a Blazor MAUI hybrid app.
 
 https://github.com/missingchildrenmn/KidsIdKit
 
+Example showing how to use per-platform services in a Blazor MAUI hybrid app.
+
+https://github.com/JasonBock/BlazorTopToBottom/tree/main/src/Rocky/DeviceAPIAccess
+
 ## Blazor Authentication
 
 Example showing how client-side authentication works behind the scenes.
