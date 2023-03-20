@@ -29,17 +29,14 @@ public sealed class WebAssemblySiteTests
 	[Test]
 	public async Task UploadFileOnSequencePageAsync()
 	{
-		//this.Page.WaitForFileChooserAsync()
 		await this.Page.GotoAsync("http://localhost:5085/sequence");
-
-		await this.Page.Locator("input[type=\"file\"]").ClickAsync();
-
 		await this.Page.Locator("input[type=\"file\"]").SetInputFilesAsync(new FilePayload
 		{
 			Name = "file.txt",
 			MimeType = "text/plain",
 			Buffer = Encoding.UTF8.GetBytes("50000"),
 		});
+		await this.Page.Locator("input[type=\"file\"]").ClickAsync();
 
 		var sequenceValue = this.Page.Locator("input[type=\"text\"]");
 		await this.Expect(sequenceValue).ToContainTextAsync("50000");
