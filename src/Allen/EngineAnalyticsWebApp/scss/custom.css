@@ -11145,6 +11145,9 @@ textarea.form-control-lg {
 /* Colors */
 html, body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  position: absolute !important;
+  /* override Ionics position: fixed to allow body scroll */
+  overflow: auto !important;
 }
 
 footer {
