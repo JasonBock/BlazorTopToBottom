@@ -1,6 +1,6 @@
 # Blazor Examples
 
-Blazor examples from VS Live Las Vegas 2023.
+Blazor examples from VS Live 2023.
 
 ## Blazor State
 
@@ -27,3 +27,7 @@ https://github.com/rockfordlhotka/BlazorDive/tree/main/BlazorClientAuthenticatio
 Example showing how server-side authentication works behind the scenes.
 
 https://github.com/rockfordlhotka/BlazorDive/tree/main/BlazorServerAuthentication
+
+## Other Blazor Examples
+
+https://github.com/rockfordlhotka/blazordive
