@@ -1,0 +1,42 @@
+﻿@page "/collatz-grid-markdown"
+
+@using Collatz;
+@using System.Numerics;
+@using System.Text;
+
+# Sequence
+
+Starting Value: @this.Start
+
+Sequence
+```
+@values
+```
+
+@code {
+    private record SequenceValue(int Index, int Value);
+
+    private string values;
+
+    [Parameter]
+    public string? Start { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (!BigInteger.TryParse(this.Start, out var start))
+        {
+            start = new BigInteger(42);
+            this.Start = "42";
+        }
+
+        var sequence = CollatzSequenceGenerator.Generate<BigInteger>(start);
+        var sequenceValues = new StringBuilder();
+
+        for(var i = 0; i < sequence.Length; i++)
+        {
+            sequenceValues.AppendLine($"{i} - {sequence[i]}");
+        }
+
+        this.values = sequenceValues.ToString();
+    }
+}

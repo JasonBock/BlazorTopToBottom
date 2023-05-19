@@ -1,4 +1,4 @@
-## .NET WebAssembly Browser app
+# .NET WebAssembly Browser app
 
 ## Build
 
@@ -12,7 +12,7 @@ After building the app, the result is in the `bin/$(Configuration)/net7.0/browse
 
 ## Run
 
-You can build the app from Visual Studio or the command-line:
+You can run the app from Visual Studio or the command-line:
 
 ```
 dotnet run -c Debug/Release

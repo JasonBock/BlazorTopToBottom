@@ -1,8 +1,12 @@
-# .NET API Application
+# .NET WASI Application
 
 ## Build
 
 You can build the app from Visual Studio or from the command-line:
+
+```
+dotnet build -c Debug/Release
+```
 
 ## Run
 
