@@ -14,7 +14,7 @@ public partial class CollatzInterop
 	[JSExport]
 	internal static int[] Generate(string start) =>
 		CollatzSequenceGenerator.Generate(int.Parse(start))
-			.Select(_ => (int)_).ToArray();
+			.ToArray();
 
 	[JSExport]
 	internal static string FindLongestSequenceSequentially()
