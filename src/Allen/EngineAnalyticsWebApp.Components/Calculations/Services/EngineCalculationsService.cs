@@ -4,9 +4,6 @@ namespace EngineAnalyticsWebApp.Components.Calculations.Services
 {
     public class EngineCalculationsService : IEngineCalculationsService
     {
-        // Allen, 1 service per component, or not needed? Thinking of tree shaking, componenets on an island.... Maybe too much
-        // fragmentation and keep in mind YAGNI. Keep in mind every single .NET pattern and practice is NOT the focus of this
-        // workshop; it's conveying Blazor and how to get going
         public EngineAnalytics CalculateEngineHorsepower(Horsepower horsepower)
         {
             var rwHorsepower = 0.0;

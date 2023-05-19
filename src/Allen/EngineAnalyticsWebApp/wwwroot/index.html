@@ -22,8 +22,13 @@
     <!--<link href="css/app.css" rel="stylesheet" />-->
     <link href="css/bundle.min.css" rel="stylesheet" />
     <link href="css/custom.css" rel="stylesheet" />
-    <!-- If you add any scoped CSS files, uncomment the following to load them -->
+    <!-- If you add any scoped CSS files, uncomment the following lines to load them -->
     <link href="EngineAnalyticsWebApp.UI.styles.css" rel="stylesheet" />
+    <!--Note: no need to add any reference to .css files using CSS Isolation (component styles) by RCLs here. They automatically
+    have an @import pointing to them at the top of the main .css file above during build and output to the browser.
+    To see this in action, open a debugger and look at the top of EngineAnalyticsWebApp.UI.styles.css to see @import statements
+    The only time you need to uncomment the example line below is for independent style sheets outside of component isolated styles.-->
+    <!--<link href="_content/EngineAnalyticsWebApp.Components/customStyles.css" rel="stylesheet" />-->
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
@@ -34,7 +39,7 @@
 </head>
 
 <body>
-    <div id="app">Loading...</div>
+    <div id="app">You are about to see the coolest app ever, just wait...</div>
 
     <div id="blazor-error-ui">
         An unhandled error has occurred.

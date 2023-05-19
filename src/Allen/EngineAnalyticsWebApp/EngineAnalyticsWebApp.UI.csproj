@@ -15,13 +15,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Blazorise.Bootstrap" Version="1.1.6" />
-		<PackageReference Include="Blazorise.DataGrid" Version="1.1.6" />
-		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.1.6" />
+		<PackageReference Include="Blazorise.Bootstrap" Version="1.2.2" />
+		<PackageReference Include="Blazorise.DataGrid" Version="1.2.2" />
+		<PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.2.2" />
 		<PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
 		<PackageReference Include="LibSassBuilder" Version="3.0.0" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.1" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.1" PrivateAssets="all" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="7.0.5" />
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="7.0.5" PrivateAssets="all" />
 		<PackageReference Include="Microsoft.Extensions.Http" Version="7.0.0" />
 	</ItemGroup>
 
