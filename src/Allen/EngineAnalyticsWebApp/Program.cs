@@ -22,6 +22,7 @@ builder.Services.AddBlazoredLocalStorageAsSingleton();
 builder.Services.AddScoped<IEngineCalculationsService, EngineCalculationsService>();
 builder.Services.AddScoped<IAutomobileDataService, AutomobileLocalStorageService>();
 // Using a singleton here purposely because the WeatherService holds state and using a scoped service won't allow that to persist
+// Singleton in BlazorWASM is per user (per tab), not per all users like Blazor SS
 builder.Services.AddSingleton<IWeatherService, WeatherService>();
 builder.Services.AddHttpClient<IWeatherDataService, WeatherDataService>(client => client.BaseAddress = new Uri("https://api.openweathermap.org/data/2.5/"));
 builder.Services.AddBlazorise(options =>
