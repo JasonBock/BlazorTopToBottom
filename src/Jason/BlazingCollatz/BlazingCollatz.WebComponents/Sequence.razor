@@ -1,6 +1,7 @@
 ﻿@using Blazored.LocalStorage
 @using Collatz
 @using System.IO
+@using System.Collections.Immutable;
 
 @page "/sequence"
 @page "/sequence/{start}"
@@ -13,22 +14,22 @@
 
 <Geolocation />
 <InputFile OnChange="this.OnInputFileChange" />
+
 <p>
     <input type="text" @bind="this.Start" />
     <button class="btn btn-primary" @onclick="this.CreateSequenceAsync">Create Sequence</button>
 </p>
+
 <p id="currentSequence">Current sequence: @this.currentSequence</p>
 
-<canvas @ref=chartReference width="800" height="600"></canvas>
+<Charting Sequence="@this.sequence" />
 
 @code {
-    ElementReference chartReference;
-
     [Parameter]
     public string? Start { get; set; }
 
+    ImmutableArray<int> sequence;
     string currentSequence = string.Empty;
-    string[] labels = Array.Empty<string>();
 
     private async Task OnInputFileChange(InputFileChangeEventArgs e)
     {
@@ -72,30 +73,21 @@
         {
             try
             {
-                var sequence = CollatzSequenceGenerator.Generate<int>(value);
+                this.sequence = CollatzSequenceGenerator.Generate<int>(value);
                 this.currentSequence = string.Join(", ", sequence);
-                this.labels = Enumerable.Range(1, sequence.Length).Select(_ => _.ToString()).ToArray();
                 await localStorage.SetItemAsync(
                     $"{nameof(Sequence)}.{nameof(Start)}", this.Start);
-                await module.InvokeAsync<object>(Constants.ChartsMethod,
-                    this.chartReference,
-                    sequence.ToArray(), this.labels);
             }
             catch (OverflowException)
             {
+                this.sequence = ImmutableArray<int>.Empty;
                 this.currentSequence = $"The value, {value}, is incorrect.";
-                this.labels = Array.Empty<string>();
-                await module.InvokeAsync<object>(Constants.ChartsMethod,
-                    this.chartReference,
-                    Array.Empty<int>(), Array.Empty<string>());
             }
         }
         else
         {
+            this.sequence = ImmutableArray<int>.Empty;
             this.currentSequence = $"{this.Start} is not a valid integer.";
-            this.labels = Array.Empty<string>();
-            await module.InvokeAsync<object>(Constants.ChartsMethod, this.chartReference,
-                Array.Empty<int>(), Array.Empty<string>());
         }
 
         this.StateHasChanged();

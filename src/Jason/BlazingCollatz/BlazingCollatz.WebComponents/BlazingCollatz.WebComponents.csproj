@@ -1,5 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 	<ItemGroup>
+	  <Content Include="Charting.razor.js" />
+	  <Content Include="Geolocation.razor.js" />
+	</ItemGroup>
+	<ItemGroup>
 		<SupportedPlatform Include="browser" />
 	</ItemGroup>
 	<ItemGroup>
@@ -7,5 +11,8 @@
 		<PackageReference Include="Collatz" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" />
 		<PackageReference Include="Spackle" />
+	</ItemGroup>
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
 	</ItemGroup>
 </Project>

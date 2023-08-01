@@ -50,7 +50,7 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "publish", "BlazingCollatz.W
 		SlnRelativePath = "BlazingCollatz.WebAssemblyHost\bin\Release\net7.0\browser-wasm\publish\"
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{2BA078C5-7B89-43D6-AEE0-F35704224D68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{2BA078C5-7B89-43D6-AEE0-F35704224D68}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
