@@ -19,7 +19,7 @@ dotnet run -c Debug/Release
 Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll need to navigate to the directory that contains the `.wasm` file, it should be `bin\$(Configuration)\net7.0`):
 
 ```
-wasmtime .\BlazingCollatz.WasiApplication.wasm --tcplisten 127.0.0.1:5000 
+wasmtime --dir=. .\BlazingCollatz.WasiApplication.wasm
 ```
 
-To call it, issue a `GET` request like this: `http://localhost:5000/collatz/556`.
+If you remove `--dir=.`, you won't be able to open the file in the code.

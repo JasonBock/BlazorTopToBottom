@@ -1,4 +1,4 @@
-# .NET WebAssembly Node app
+# .NET Console Application
 
 ## Build
 
@@ -18,10 +18,8 @@ You can run the app from Visual Studio or the command-line:
 dotnet run -c Debug/Release
 ```
 
-Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll need to navigate to the directory that contains the `.wasm` file, it should be `bin\$(Configuration)\net7.0`):
+Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll need to navigate to the directory that contains the `.wasm` file, it should be `bin\$(Configuration)\net7.0\browser-wasm\AppBundle`):
 
 ```
-wasmtime --dir=. BlazingCollatz.WasiApplication.wasm
+wasmtime BlazingCollatz.ConsoleApplication.wasm
 ```
-
-If you take out the `--dir=.`, then the code will not be able to see the files in the directory.
