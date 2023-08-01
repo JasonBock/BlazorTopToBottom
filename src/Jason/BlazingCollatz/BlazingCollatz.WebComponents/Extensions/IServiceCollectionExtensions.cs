@@ -5,9 +5,6 @@ namespace BlazingCollatz.WebComponents.Extensions;
 
 public static class IServiceCollectionExtensions 
 {
-	public static void AddWebComponents(this IServiceCollection self)
-	{
-		self.AddTransient<SequenceViewModel>();
+   public static void AddWebComponents(this IServiceCollection self) => 
 		self.AddBlazoredLocalStorage();
-	}
 }
