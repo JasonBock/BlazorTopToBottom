@@ -22,6 +22,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ConsoleAppli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasiApplication", "BlazingCollatz.WasiApplication\BlazingCollatz.WasiApplication.csproj", "{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -52,6 +54,10 @@ Global
 		{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

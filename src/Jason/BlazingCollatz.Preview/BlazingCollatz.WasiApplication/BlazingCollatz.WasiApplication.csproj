@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<!-- 
+		I thought this package was the one that was the "official" Wasi.Sdk 
+		release for .NET. But...it didn't do anything when I referenced it,
+		even though it looks like it has all the goodies in it.
+		-->
+		<!--<PackageReference Include="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk" />-->
+		<PackageReference Include="Wasi.Sdk" />
+	</ItemGroup>
+</Project>
