@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<OutputType>Exe</OutputType>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<WasmEnableThreads>true</WasmEnableThreads>
+		<WasmMainJSPath>main.js</WasmMainJSPath>
+	</PropertyGroup>
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="index.html" />
+		<WasmExtraFilesToDeploy Include="main.js" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<PackageReference Include="Microsoft.NET.WebAssembly.Threading" />
+		<PackageReference Include="Spackle" />
+	</ItemGroup>
+</Project>
