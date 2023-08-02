@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasiApplicat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{C85FA614-8711-440E-A8FA-7610E5E7B0A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{F50DDF44-83EB-4124-92F3-7CBC0B001326}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +66,10 @@ Global
 		{C85FA614-8711-440E-A8FA-7610E5E7B0A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C85FA614-8711-440E-A8FA-7610E5E7B0A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C85FA614-8711-440E-A8FA-7610E5E7B0A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50DDF44-83EB-4124-92F3-7CBC0B001326}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50DDF44-83EB-4124-92F3-7CBC0B001326}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50DDF44-83EB-4124-92F3-7CBC0B001326}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50DDF44-83EB-4124-92F3-7CBC0B001326}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

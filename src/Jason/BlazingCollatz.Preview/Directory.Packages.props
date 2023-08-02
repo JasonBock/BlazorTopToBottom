@@ -21,5 +21,6 @@
     <PackageVersion Include="Spackle" Version="12.0.0" />
     <PackageVersion Include="Wasi.AspNetCore.Server.Native" Version="0.1.2-preview.10061" />
     <PackageVersion Include="Wasi.Sdk" Version="0.1.4-preview.10020" />
+    <PackageVersion Include="Wasmtime" Version="11.0.1" />
   </ItemGroup>
 </Project>
