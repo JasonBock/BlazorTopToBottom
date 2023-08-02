@@ -9,6 +9,8 @@
 		<PackageVersion Include="coverlet.collector" Version="6.0.0" />
 		<PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.0-preview.6.23329.11" />
 		<PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-preview.6.23329.11" />
+		<PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-preview.6.23329.11" />
+		<PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-preview.6.23329.11" />
 		<PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
 		<PackageVersion Include="NUnit" Version="3.13.3" />
 		<PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
