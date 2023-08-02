@@ -1,0 +1,31 @@
+﻿@using System.Collections.Immutable;
+@inject IJSRuntime JSRuntime
+
+<canvas @ref=ChartReference width="800" height="600"></canvas>
+
+@code {
+    private ElementReference ChartReference { get; set; }
+    private ImmutableArray<int> sequence;
+
+    [Parameter]
+    public ImmutableArray<int> Sequence { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (!this.Sequence.IsDefault)
+        {
+            if (this.sequence != this.Sequence)
+            {
+                this.sequence = this.Sequence;
+                var labels = this.Sequence.Length > 0 ?
+                    Enumerable.Range(1, this.Sequence.Length).Select(_ => _.ToString()).ToArray() :
+                    Array.Empty<string>();
+                var module = await this.JSRuntime.InvokeAsync<IJSObjectReference>(
+                   Constants.Import, Constants.ChartsFileLocation);
+                await module.InvokeAsync<object>(Constants.ChartsMethod,
+                    this.ChartReference,
+                    this.Sequence, labels);
+            }
+        }
+    }
+}

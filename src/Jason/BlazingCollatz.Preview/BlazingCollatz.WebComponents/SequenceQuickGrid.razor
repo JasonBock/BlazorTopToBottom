@@ -1,0 +1,35 @@
+﻿@page "/sequence-quickgrid"
+
+@using Collatz;
+@using Microsoft.AspNetCore.Components.QuickGrid;
+@using System.Numerics;
+@using Microsoft.AspNetCore.Components.Web;
+
+<div>
+    <a href="https://aspnet.github.io/quickgridsamples/getstarted">QuickGrid for Blazor</a>
+</div>
+
+<QuickGrid Items="@values">
+    <PropertyColumn Property="@(p => p.Index)" />
+    <PropertyColumn Property="@(p => p.Value)" Sortable="true" />
+</QuickGrid>
+
+@code 
+{
+    private record SequenceValue(int Index, int Value);
+
+    private IQueryable<SequenceValue>? values;
+
+    protected override void OnInitialized()
+    {
+        var sequence = CollatzSequenceGenerator.Generate<int>(166);
+        var sequenceValues = new List<SequenceValue>();
+
+        for(var i = 0; i < sequence.Length; i++)
+        {
+            sequenceValues.Add(new(i, sequence[i]));                
+        }
+
+        this.values = sequenceValues.AsQueryable();
+    }
+}

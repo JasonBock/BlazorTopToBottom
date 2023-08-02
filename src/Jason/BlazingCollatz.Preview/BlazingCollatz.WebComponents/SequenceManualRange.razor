@@ -1,0 +1,42 @@
+﻿@using Collatz;
+@using System.Diagnostics
+@using System.Numerics
+
+@page "/sequence-manual"
+
+<h1>Sequence - Manual</h1>
+
+<button class="btn btn-primary" @onclick="this.OnCreateSequenceSequentially">Find Longest Sequence Sequentially</button>
+<p>Results: @this.sequentialResults</p>
+
+@code {
+    string parallelResults = string.Empty;
+    string sequentialResults = string.Empty;
+
+    public void OnCreateSequenceSequentially()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var result = SequenceManualRange.FindLongestSequence(new BigInteger(250_000), new BigInteger(300_000));
+        stopwatch.Stop();
+
+        this.sequentialResults = $"Longest sequence in range [250000, 300000) is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed}";
+        this.StateHasChanged();
+    }
+
+    private static (BigInteger value, int sequenceLength) FindLongestSequence(BigInteger start, BigInteger end)
+    {
+        (BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
+
+        for (var i = start; i < end; i++)
+        {
+            var sequence = CollatzSequenceGenerator.Generate<BigInteger>(i);
+
+            if (sequence.Length > result.sequenceLength)
+            {
+                result = (i, sequence.Length);
+            }
+        }
+
+        return result;
+    }
+}
