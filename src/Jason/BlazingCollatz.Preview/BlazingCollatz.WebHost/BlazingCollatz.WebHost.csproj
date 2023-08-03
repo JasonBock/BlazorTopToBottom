@@ -1,0 +1,6 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+	<ItemGroup>
+		<PackageReference Include="Collatz" />
+		<PackageReference Include="Spackle" />
+	</ItemGroup>
+</Project>

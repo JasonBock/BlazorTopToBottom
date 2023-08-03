@@ -52,6 +52,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "publish", "BlazingCollatz.W
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{2BA078C5-7B89-43D6-AEE0-F35704224D68}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebAssemblyEmptyHost", "BlazingCollatz.WebAssemblyEmptyHost\BlazingCollatz.WebAssemblyEmptyHost.csproj", "{9D28916C-A980-4C07-822A-27C9C85E40AA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -102,6 +104,10 @@ Global
 		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2BA078C5-7B89-43D6-AEE0-F35704224D68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D28916C-A980-4C07-822A-27C9C85E40AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D28916C-A980-4C07-822A-27C9C85E40AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D28916C-A980-4C07-822A-27C9C85E40AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D28916C-A980-4C07-822A-27C9C85E40AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

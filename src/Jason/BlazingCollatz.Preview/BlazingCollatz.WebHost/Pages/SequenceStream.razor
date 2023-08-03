@@ -1,0 +1,42 @@
+﻿@using Collatz;
+@using System.Diagnostics
+@using System.Numerics
+
+@page "/sequence-stream"
+@attribute [StreamRendering(true)]
+
+<h1>Sequence - Streaming</h1>
+
+<p>Longest Sequence:
+
+    @if (this.isCalculating)
+    {
+        <div>Calculating, please wait...</div>
+    }
+    else
+    {
+        <div>@this.result</div>
+    }
+</p>
+
+@code {
+    (BigInteger value, int sequenceLength) result;
+    bool isCalculating = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Yield();
+
+        for (var i = new BigInteger(250_000); i < new BigInteger(500_000); i++)
+        {
+            var sequence = CollatzSequenceGenerator.Generate<BigInteger>(i);
+
+            if (sequence.Length > this.result.sequenceLength)
+            {
+                this.result = (i, sequence.Length);
+            }
+        }
+
+        isCalculating = false;
+    }
+}
