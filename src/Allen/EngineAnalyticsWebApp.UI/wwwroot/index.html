@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>EngineAnalyticsWebApp</title>
+    <base href="/" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon" />
+    <link href="manifest.webmanifest" rel="manifest" />
+    <!--Apple-->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+	<link rel="apple-touch-icon" sizes="512x512" href="images/icon-512.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="images/icon-192.png" />
+	
+	<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="_content/Blazorise/blazorise.css" rel="stylesheet" />
+    <link href="_content/Blazorise.Bootstrap/blazorise.bootstrap.css" rel="stylesheet" />
+    <!--<link href="css/app.css" rel="stylesheet" />-->
+    <link href="css/bundle.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+    <!-- If you add any scoped CSS files, uncomment the following lines to load them -->
+    <link href="EngineAnalyticsWebApp.UI.styles.css" rel="stylesheet" />
+    <!--Note: no need to add any reference to .css files using CSS Isolation (component styles) by RCLs here. They automatically
+    have an @import pointing to them at the top of the main .css file above during build and output to the browser.
+    To see this in action, open a debugger and look at the top of EngineAnalyticsWebApp.UI.styles.css to see @import statements
+    The only time you need to uncomment the example line below is for independent style sheets outside of component isolated styles.-->
+    <!--<link href="_content/EngineAnalyticsWebApp.Components/customStyles.css" rel="stylesheet" />-->
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.esm.js"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/@ionic/core/dist/ionic/ionic.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ionic/core/css/ionic.bundle.css" />
+
+    <script type="module" src="_content/EngineAnalyticsWebApp.Components/bundle.min.js"></script>
+	
+</head>
+
+<body>
+    <div id="app">
+        <svg class="loading-progress">
+            <circle r="40%" cx="50%" cy="50%" />
+            <circle r="40%" cx="50%" cy="50%" />
+        </svg>
+        <div class="loading-progress-text"></div>
+    </div>
+
+    <div id="blazor-error-ui">
+        An unhandled error has occurred.
+        <a href="" class="reload">Reload</a>
+        <a class="dismiss">🗙</a>
+    </div>
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script>navigator.serviceWorker.register('service-worker.js');</script>
+    <script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
