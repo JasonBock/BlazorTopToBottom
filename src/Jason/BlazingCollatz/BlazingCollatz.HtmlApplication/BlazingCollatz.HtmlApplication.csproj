@@ -1,6 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk.WebAssembly">
 	<PropertyGroup>
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<WasmEnableThreads>true</WasmEnableThreads>
 	</PropertyGroup>
 	<ItemGroup>
 		<PackageReference Include="Collatz" />

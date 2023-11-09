@@ -14,73 +14,29 @@ public partial class CollatzInterop
 	[JSExport]
 	internal static int[] Generate(string start)
 	{
-		Console.WriteLine("CollatzInterop.Generated() invoked.");
+		Console.WriteLine("CollatzInterop.Generated() - invoked.");
 		var result = CollatzSequenceGenerator.Generate(int.Parse(start))
 			 .ToArray();
-		Console.WriteLine("CollatzInterop.Generated() finished.");
+		Console.WriteLine("CollatzInterop.Generated() - finished.");
 		return result;
 	}
 
 	[JSExport]
 	internal static string FindLongestSequenceSequentially()
 	{
-		Console.WriteLine("CollatzInterop.FindLongestSequenceSequentially() invoked.");
+		Console.WriteLine("CollatzInterop.FindLongestSequenceSequentially() - invoked.");
 		var stopwatch = Stopwatch.StartNew();
 		var (value, sequenceLength) = CollatzInterop.FindLongestSequence(CollatzInterop.range);
 		stopwatch.Stop();
 
-		Console.WriteLine("CollatzInterop.FindLongestSequenceSequentially() finished.");
+		Console.WriteLine("CollatzInterop.FindLongestSequenceSequentially() - finished.");
 		return $"Longest sequence in range {CollatzInterop.range} is {sequenceLength} for {value} - Elapsed time is {stopwatch.Elapsed}";
-	}
-
-	[JSExport]
-	public static string FindLongestSequenceInParallelUsingThreads()
-	{
-		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingThreads() invoked.");
-
-		var stopwatch = Stopwatch.StartNew();
-		var ranges = range.Partition(8);
-
-		var events = new List<ManualResetEvent>();
-		var threadResults = new List<(BigInteger value, int sequenceLength)>();
-
-		foreach (var range in ranges)
-		{
-			var @event = new ManualResetEvent(false);
-
-			ThreadPool.QueueUserWorkItem(
-				range =>
-				{
-					threadResults.Add(CollatzInterop.FindLongestSequence(range));
-					@event.Set();
-				}, range, true);
-
-			events.Add(@event);
-		}
-
-		WaitHandle.WaitAll(events.ToArray());
-
-		(BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
-
-		foreach (var threadResult in threadResults)
-		{
-			if (threadResult.sequenceLength > result.sequenceLength)
-			{
-				result = threadResult;
-			}
-		}
-
-		stopwatch.Stop();
-
-		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingThreads() finished.");
-
-		return $"Longest sequence in range {CollatzInterop.range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
 	}
 
 	[JSExport]
 	public static async Task<string> FindLongestSequenceInParallelUsingTasksAsync()
 	{
-		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingTasksAsync() invoked.");
+		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingTasksAsync() - invoked.");
 
 		var stopwatch = Stopwatch.StartNew();
 		var ranges = range.Partition(8);
@@ -113,13 +69,15 @@ public partial class CollatzInterop
 
 		stopwatch.Stop();
 
-		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingTasksAsync() invoked.");
+		Console.WriteLine("CollatzInterop.FindLongestSequenceInParallelUsingTasksAsync() - finished.");
 
 		return $"Longest sequence in range {CollatzInterop.range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
 	}
 
 	private static (BigInteger value, int sequenceLength) FindLongestSequence(Range<BigInteger> range)
 	{
+		Console.WriteLine($"CollatzInterop.FindLongestSequence() - invoked with {range}.");
+
 		(BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
 
 		for (var i = range.Start; i < range.End; i++)
@@ -131,6 +89,8 @@ public partial class CollatzInterop
 				result = (i, sequence.Length);
 			}
 		}
+
+		Console.WriteLine($"CollatzInterop.FindLongestSequence() - finished.");
 
 		return result;
 	}
