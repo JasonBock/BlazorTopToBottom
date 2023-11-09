@@ -1,0 +1,14 @@
+<Project>
+	<PropertyGroup>
+		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
+		<Authors>Jason Bock</Authors>
+		<Copyright>Copyright © 2023</Copyright>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<LangVersion>preview</LangVersion>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+		<Nullable>enable</Nullable>
+		<TargetFramework>net8.0</TargetFramework>
+		<TreatWarningsAsErrors>True</TreatWarningsAsErrors>
+		<Version>1.0.0</Version>
+	</PropertyGroup>
+</Project>

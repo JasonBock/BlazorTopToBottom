@@ -1,0 +1,95 @@
+﻿@using Blazored.LocalStorage
+@using Collatz
+@using System.IO
+@using System.Collections.Immutable;
+
+@page "/sequence"
+@page "/sequence/{start}"
+
+@inject IJSRuntime JSRuntime
+@inject ILocalStorageService localStorage
+@inject NavigationManager manager
+
+<h1>Sequence</h1>
+
+<Geolocation />
+<InputFile OnChange="this.OnInputFileChange" />
+
+<p>
+    <input type="text" @bind="this.Start" />
+    <button class="btn btn-primary" @onclick="this.CreateSequenceAsync">Create Sequence</button>
+</p>
+
+<p id="currentSequence">Current sequence: @this.currentSequence</p>
+
+<Charting Sequence="@this.sequence" />
+
+@code {
+    [Parameter]
+    public string? Start { get; set; }
+
+    ImmutableArray<int> sequence;
+    string currentSequence = string.Empty;
+
+    private async Task OnInputFileChange(InputFileChangeEventArgs e)
+    {
+        using var stream = new StreamReader(e.File.OpenReadStream(e.File.Size));
+        var content = await stream.ReadLineAsync();
+
+        if (int.TryParse(content, out var value))
+        {
+            this.Start = content;
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            if (string.IsNullOrWhiteSpace(this.Start))
+            {
+                var startValue = await localStorage.GetItemAsync<string>(
+                    $"{nameof(Sequence)}.{nameof(Start)}");
+
+                if (!string.IsNullOrWhiteSpace(startValue))
+                {
+                    this.Start = startValue;
+                }
+            }
+
+            if (!string.IsNullOrWhiteSpace(this.Start))
+            {
+                await this.CreateSequenceAsync();
+            }
+        }
+    }
+
+    private async Task CreateSequenceAsync()
+    {
+        var module = await this.JSRuntime.InvokeAsync<IJSObjectReference>(
+             Constants.Import, Constants.ChartsFileLocation);
+
+        if (int.TryParse(this.Start, out var value))
+        {
+            try
+            {
+                this.sequence = CollatzSequenceGenerator.Generate<int>(value);
+                this.currentSequence = string.Join(", ", sequence);
+                await localStorage.SetItemAsync(
+                    $"{nameof(Sequence)}.{nameof(Start)}", this.Start);
+            }
+            catch (OverflowException)
+            {
+                this.sequence = ImmutableArray<int>.Empty;
+                this.currentSequence = $"The value, {value}, is incorrect.";
+            }
+        }
+        else
+        {
+            this.sequence = ImmutableArray<int>.Empty;
+            this.currentSequence = $"{this.Start} is not a valid integer.";
+        }
+
+        this.StateHasChanged();
+    }
+}

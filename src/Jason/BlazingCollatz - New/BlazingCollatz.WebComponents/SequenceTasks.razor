@@ -1,0 +1,111 @@
+﻿@using Collatz;
+@using Spackle
+@using System.Diagnostics
+@using System.Numerics
+
+@page "/sequence-tasks"
+
+<h1>Sequence - Tasks</h1>
+
+<button class="btn btn-primary" @onclick="this.OnCreateSequenceSequentially">Find Longest Sequence Sequentially</button>
+<p>Results: @this.sequentialResults</p>
+
+<button class="btn btn-primary" @onclick="this.OnCreateSequenceInParallel">Find Longest Sequence in Parallel</button>
+<p>Results: @this.parallelResults</p>
+
+<button class="btn btn-primary" @onclick="this.OnCreateSequenceInParallelEightTasks">Find Longest Sequence in Parallel (8 tasks)</button>
+<p>Results: @this.parallelResultsEightTasks</p>
+
+@code {
+    string sequentialResults = string.Empty;
+    string parallelResults = string.Empty;
+    string parallelResultsEightTasks = string.Empty;
+    private Range<BigInteger> range = new Range<BigInteger>(new BigInteger(250_000), new BigInteger(300_000));
+
+    public void OnCreateSequenceSequentially()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var result = SequenceTasks.FindLongestSequence(this.range);
+        stopwatch.Stop();
+
+        this.sequentialResults = $"Longest sequence in range {range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed}";
+        this.StateHasChanged();
+    }
+
+    public void OnCreateSequenceInParallel()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var tasks = new List<Task<(BigInteger value, int sequenceLength)>>();
+        var ranges = range.Partition(Environment.ProcessorCount);
+
+        for (var i = 0; i < ranges.Length; i++)
+        {
+            var r = ranges[i];
+            tasks.Add(Task.Run(() => FindLongestSequence(r)));
+        }
+
+        Task.WaitAll(tasks.ToArray());
+        (BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
+
+        foreach (var task in tasks)
+        {
+            var taskResult = task.Result;
+            if (taskResult.sequenceLength > result.sequenceLength)
+            {
+                result = taskResult;
+            }
+        }
+
+        stopwatch.Stop();
+
+        this.parallelResults = $"Longest sequence in range {range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
+        this.StateHasChanged();
+    }
+
+    public void OnCreateSequenceInParallelEightTasks()
+    {
+        var stopwatch = Stopwatch.StartNew();
+        var tasks = new List<Task<(BigInteger value, int sequenceLength)>>();
+        var ranges = range.Partition(8);
+
+        for (var i = 0; i < ranges.Length; i++)
+        {
+            var r = ranges[i];
+            tasks.Add(Task.Run(() => FindLongestSequence(r)));
+        }
+
+        Task.WaitAll(tasks.ToArray());
+        (BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
+
+        foreach (var task in tasks)
+        {
+            var taskResult = task.Result;
+            if (taskResult.sequenceLength > result.sequenceLength)
+            {
+                result = taskResult;
+            }
+        }
+
+        stopwatch.Stop();
+
+        this.parallelResultsEightTasks = $"Longest sequence in range {range} is {result.sequenceLength} for {result.value} - Elapsed time is {stopwatch.Elapsed} - processor count is {Environment.ProcessorCount}";
+        this.StateHasChanged();
+    }
+
+    private static (BigInteger value, int sequenceLength) FindLongestSequence(Range<BigInteger> range)
+    {
+        (BigInteger value, int sequenceLength) result = (BigInteger.Zero, 0);
+
+        for (var i = range.Start; i < range.End; i++)
+        {
+            var sequence = CollatzSequenceGenerator.Generate<BigInteger>(i);
+
+            if (sequence.Length > result.sequenceLength)
+            {
+                result = (i, sequence.Length);
+            }
+        }
+
+        return result;
+    }
+}

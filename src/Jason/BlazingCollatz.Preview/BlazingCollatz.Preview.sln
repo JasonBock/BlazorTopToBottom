@@ -16,21 +16,42 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebAssemblyH
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ServerSideHost", "BlazingCollatz.ServerSideHost\BlazingCollatz.ServerSideHost.csproj", "{20D0EB00-D0F8-4C67-9B4B-55639F3D52A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ConsoleApplication", "BlazingCollatz.ConsoleApplication\BlazingCollatz.ConsoleApplication.csproj", "{80EB7278-EC70-4CAE-A51A-FE74618BD3E6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ConsoleApplication", "BlazingCollatz.ConsoleApplication\BlazingCollatz.ConsoleApplication.csproj", "{80EB7278-EC70-4CAE-A51A-FE74618BD3E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.HtmlApplication", "BlazingCollatz.HtmlApplication\BlazingCollatz.HtmlApplication.csproj", "{F0FD0EC8-16C8-4329-AB38-8A41D5EC8E23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasiApplication", "BlazingCollatz.WasiApplication\BlazingCollatz.WasiApplication.csproj", "{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasiApplication", "BlazingCollatz.WasiApplication\BlazingCollatz.WasiApplication.csproj", "{12D53CE6-E8B8-4B1A-ADAC-125FBD014369}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{C85FA614-8711-440E-A8FA-7610E5E7B0A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{C85FA614-8711-440E-A8FA-7610E5E7B0A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{F50DDF44-83EB-4124-92F3-7CBC0B001326}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WasmApplication", "BlazingCollatz.WasmApplication\BlazingCollatz.WasmApplication.csproj", "{F50DDF44-83EB-4124-92F3-7CBC0B001326}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebHost", "BlazingCollatz.WebHost\BlazingCollatz.WebHost.csproj", "{4E26E913-61C7-4D62-A7D3-E3D154155D7B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebHost", "BlazingCollatz.WebHost\BlazingCollatz.WebHost.csproj", "{4E26E913-61C7-4D62-A7D3-E3D154155D7B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebComponents.Tests", "BlazingCollatz.WebComponents.Tests\BlazingCollatz.WebComponents.Tests.csproj", "{C7BDE67A-30D7-4CFA-BB8A-2B20F4EC267F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlazingCollatz.WebAssemblyEmptyHost", "BlazingCollatz.WebAssemblyEmptyHost\BlazingCollatz.WebAssemblyEmptyHost.csproj", "{0B2E08DD-F0BF-4A27-B376-5852D92D7449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.WebAssemblyEmptyHost", "BlazingCollatz.WebAssemblyEmptyHost\BlazingCollatz.WebAssemblyEmptyHost.csproj", "{0B2E08DD-F0BF-4A27-B376-5852D92D7449}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "publish", "BlazingCollatz.WebAssemblyHost\bin\Release\net8.0\browser-wasm\publish\", "{E0C0E633-59B5-45AD-B4D2-8A6D0191E565}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_53335"
+		Debug.AspNetCompiler.PhysicalPath = "BlazingCollatz.WebAssemblyHost\bin\Release\net8.0\browser-wasm\publish\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53335\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_53335"
+		Release.AspNetCompiler.PhysicalPath = "BlazingCollatz.WebAssemblyHost\bin\Release\net8.0\browser-wasm\publish\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_53335\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "53335"
+		SlnRelativePath = "BlazingCollatz.WebAssemblyHost\bin\Release\net8.0\browser-wasm\publish\"
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -82,6 +103,10 @@ Global
 		{0B2E08DD-F0BF-4A27-B376-5852D92D7449}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B2E08DD-F0BF-4A27-B376-5852D92D7449}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B2E08DD-F0BF-4A27-B376-5852D92D7449}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E0C0E633-59B5-45AD-B4D2-8A6D0191E565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C0E633-59B5-45AD-B4D2-8A6D0191E565}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0C0E633-59B5-45AD-B4D2-8A6D0191E565}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0C0E633-59B5-45AD-B4D2-8A6D0191E565}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
