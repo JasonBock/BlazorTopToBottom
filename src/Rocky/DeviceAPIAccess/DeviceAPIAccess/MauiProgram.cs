@@ -1,33 +1,31 @@
-﻿using Microsoft.Extensions.Logging;
-using DeviceAPIAccess.Data;
+﻿using DeviceAPIAccess.Platforms.Services;
 using DeviceAPIAccess.Services;
-using DeviceAPIAccess.Platforms.Services;
+using Microsoft.Extensions.Logging;
 
-namespace DeviceAPIAccess;
-
-public static class MauiProgram
+namespace DeviceAPIAccess
 {
-	public static MauiApp CreateMauiApp()
-	{
-		var builder = MauiApp.CreateBuilder();
-		builder
-			.UseMauiApp<App>()
-			.ConfigureFonts(fonts =>
-			{
-				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
-			});
+    public static class MauiProgram
+    {
+        public static MauiApp CreateMauiApp()
+        {
+            var builder = MauiApp.CreateBuilder();
+            builder
+                .UseMauiApp<App>()
+                .ConfigureFonts(fonts =>
+                {
+                    fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
+                });
 
-		builder.Services.AddMauiBlazorWebView();
+            builder.Services.AddMauiBlazorWebView();
 
 #if DEBUG
-		builder.Services.AddBlazorWebViewDeveloperTools();
-		builder.Logging.AddDebug();
+    		builder.Services.AddBlazorWebViewDeveloperTools();
+    		builder.Logging.AddDebug();
 #endif
 
-		builder.Services.AddSingleton<WeatherForecastService>();
+            builder.Services.AddScoped<IGetText, GetText>();
 
-		builder.Services.AddScoped<IGetText, GetText>();
-
-		return builder.Build();
-	}
+            return builder.Build();
+        }
+    }
 }
