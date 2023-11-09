@@ -1,5 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
-	<ItemGroup>
-		<ProjectReference Include="..\BlazingCollatz.WebComponents\BlazingCollatz.WebComponents.csproj" />
-	</ItemGroup>
-</Project>

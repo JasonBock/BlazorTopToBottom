@@ -13,7 +13,7 @@ var app = builder.Build();
 
 app.MapGet("/collatz/{value}", (BigInteger value) =>
 {
-	if(value > BigInteger.One)
+	if (value > BigInteger.One)
 	{
 		var sequence = CollatzSequenceGenerator.Generate<BigInteger>(value);
 		return string.Join(", ", sequence);

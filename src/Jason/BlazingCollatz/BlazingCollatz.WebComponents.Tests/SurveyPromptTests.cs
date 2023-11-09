@@ -1,4 +1,5 @@
 ﻿using Bunit;
+using NUnit.Framework;
 
 namespace BlazingCollatz.WebComponents.Tests;
 

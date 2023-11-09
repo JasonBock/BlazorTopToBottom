@@ -1,4 +1,4 @@
-﻿// This gets around CA1416 giving a warning about using JSExportAttribute
+// This gets around CA1416 giving a warning about using JSExportAttribute
 using System.Runtime.Versioning;
 
 [assembly: SupportedOSPlatform("browser")]
