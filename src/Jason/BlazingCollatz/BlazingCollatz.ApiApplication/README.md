@@ -18,4 +18,4 @@ Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll ne
 wasmtime .\BlazingCollatz.ApiApplication.wasm --tcplisten 127.0.0.1:5000 
 ```
 
-To call it, issue a `GET` request like this: `http://localhost:5000/collatz/556`.
+To call it, issue a `GET` request like this: `http://localhost:8080/collatz/556` (for .NET server) or `http://localhost:5000/collatz/556` (for wasmtime).

@@ -16,7 +16,7 @@ You can run the app from Visual Studio or the command-line:
 dotnet run -c Debug/Release
 ```
 
-Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll need to navigate to the directory that contains the `.wasm` file, it should be `bin\$(Configuration)\net7.0`):
+Or run it in [WasmTime](https://github.com/bytecodealliance/wasmtime) (you'll need to navigate to the directory that contains the `.wasm` file, it should be `bin\$(Configuration)\net8.0`):
 
 ```
 wasmtime --dir=. .\BlazingCollatz.WasiApplication.wasm

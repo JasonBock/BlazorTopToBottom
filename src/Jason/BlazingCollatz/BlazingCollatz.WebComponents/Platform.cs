@@ -10,9 +10,7 @@ public sealed class Platform
 	protected override void BuildRenderTree(RenderTreeBuilder builder)
 	{
 		builder.OpenElement(0, "span");
-		builder.AddContent(1, this.Value);
+		builder.AddContent(1, RuntimeInformation.OSDescription);
 		builder.CloseElement();
 	}
-
-	private string Value => RuntimeInformation.OSDescription;
 }

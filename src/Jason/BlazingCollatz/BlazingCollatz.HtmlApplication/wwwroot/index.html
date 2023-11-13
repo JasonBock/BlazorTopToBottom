@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--  Licensed to the .NET Foundation under one or more agreements. -->
+<!-- The .NET Foundation licenses this file to you under the MIT license. -->
+<html>
+
+<head>
+    <title>BlazingCollatz.HtmlApplication2</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='module' src="./main.js"></script>
+</head>
+
+<body>
+    <p>
+        <input id="start" type="text" />
+        <button type="button" id="sequenceButton">Create Sequence</button>
+    </p>
+    <p>
+        <label id="sequence" />
+    </p>
+
+    <p>
+        <button type="button" id="findLongestSequenceSequentiallyButton">Find Longest Sequence Sequentially</button>
+    </p>
+    <p>
+        <label id="longestSequenceSequentially" />
+    </p>
+
+    <p>
+        <button type="button" id="findLongestSequenceInParallelUsingTasksButton">Find Longest Sequence In Parallel (Tasks)</button>
+    </p>
+    <p>
+        <label id="longestSequenceInParallelUsingTasks" />
+    </p>
+
+    <script type="module">
+        import { getSequence, findLongestSequenceSequentially, findLongestSequenceInParallelUsingTasks } from './main.js';
+
+        document.querySelector('#sequenceButton')
+            .addEventListener('click', function () {
+                document.getElementById('sequence').innerText =
+                    getSequence(document.getElementById('start').value).join(', ');
+            });
+
+        document.querySelector('#findLongestSequenceSequentiallyButton')
+            .addEventListener('click', function () {
+                document.getElementById('longestSequenceSequentially').innerText =
+                    findLongestSequenceSequentially();
+            });
+
+        document.querySelector('#findLongestSequenceInParallelUsingTasksButton')
+            .addEventListener('click', function () {
+                findLongestSequenceInParallelUsingTasks().then(function (value) { 
+                    document.getElementById('longestSequenceInParallelUsingTasks').innerText = value;
+                });
+            });
+    </script>
+</body>
+
+</html>
