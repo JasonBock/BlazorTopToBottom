@@ -30,7 +30,7 @@ namespace EngineAnalyticsWebApp.Components.Weather.Services
                 zipCode = defaultZipCode;
             }
 
-            // Only stream a new zip code if it's diffrent than previously stored in local storage
+            // Only stream a new zip code if it's different than previously stored in local storage
             if (zipCode != lastSetWeatherZipCode)
             {
                 // If no zip code was provided, but there's a value in local storage use it
