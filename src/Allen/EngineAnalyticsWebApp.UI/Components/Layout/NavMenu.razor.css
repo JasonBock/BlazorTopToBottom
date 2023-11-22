@@ -64,13 +64,12 @@
   /*.collapse {*/
   /* Never collapse the sidebar for wide screens */
   /*display: block;
-    }*/
+  }*/
   .sidebar-collapse {
     /* Never collapse the sidebar for wide screens */
     display: block;
   }
 }
-
 /* Custom Styles */
 .nav-item ::deep .nav-link i {
   width: 2rem;
@@ -91,7 +90,7 @@
   font-size: 13px;
   transform: rotateZ(90deg);
   transform-origin: left;
-  transition: transform .5s ease;
+  transition: transform 0.5s ease;
 }
 
 ::deep .nav-item.has-submenu > a.collapsed:after {
