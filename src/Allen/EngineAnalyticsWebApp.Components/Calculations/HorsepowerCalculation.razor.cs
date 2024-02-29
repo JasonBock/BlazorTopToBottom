@@ -26,7 +26,7 @@ namespace EngineAnalyticsWebApp.Components.Calculations
 
         private async void HandleValidSubmit()
         {
-            if (automobile.Horsepower is not null && automobile.Horsepower.Weight is not null && automobile.Horsepower.EstimatedTime is not null)
+            if (automobile.Horsepower?.Weight != null && automobile.Horsepower?.EstimatedTime != null)
             {
                 automobile.EngineAnalytics = this.EngineCalculationsService.CalculateEngineHorsepower(automobile.Horsepower);
                 await this.AutomobileDataService.AddAutomobile(automobile);

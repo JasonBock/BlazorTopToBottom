@@ -1,4 +1,5 @@
-﻿namespace EngineAnalyticsWebApp.UI.Components.Layout
+﻿
+namespace EngineAnalyticsWebApp.UI.Components.Layout
 {
     public partial class NavMenu
     {
