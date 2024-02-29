@@ -1,0 +1,10 @@
+﻿[
+  {
+    "outputFile": "Weather/WeatherLocation.razor.css",
+    "inputFile": "Weather/WeatherLocation.razor.scss"
+  },
+  {
+    "outputFile": "Weather/WeatherLocation.razor.min.js",
+    "inputFile": "Weather/WeatherLocation.razor.js"
+  }
+]

@@ -1,0 +1,37 @@
+﻿[
+  {
+    "outputFile": "scss/custom.css",
+    "inputFile": "scss/custom.scss",
+    "minify": {
+      "enabled": true
+    }
+  },
+  {
+    "outputFile": "Components/Pages/Weather/TrackWeather.razor.css",
+    "inputFile": "Components/Pages/Weather/TrackWeather.razor.scss"
+  },
+  {
+    "outputFile": "Components/Layout/MainLayout.razor.css",
+    "inputFile": "Components/Layout/MainLayout.razor.scss"
+  },
+  {
+    "outputFile": "Components/Layout/NavMenu.razor.css",
+    "inputFile": "Components/Layout/NavMenu.razor.scss"
+  },
+  {
+    "outputFile": "Components/Pages/Reports/DisplacementResults.razor.css",
+    "inputFile": "Components/Pages/Reports/DisplacementResults.razor.scss"
+  },
+  {
+    "outputFile": "Components/Pages/Reports/HorsepowerResults.razor.css",
+    "inputFile": "Components/Pages/Reports/HorsepowerResults.razor.scss"
+  },
+  {
+    "outputFile": "Components/Pages/Reports/TorqueResults.razor.css",
+    "inputFile": "Components/Pages/Reports/TorqueResults.razor.scss"
+  },
+  {
+    "outputFile": "Components/Pages/Home.razor.css",
+    "inputFile": "Components/Pages/Home.razor.scss"
+  }
+]
