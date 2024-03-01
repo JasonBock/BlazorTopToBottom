@@ -3,24 +3,24 @@
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
   </PropertyGroup>
   <ItemGroup>
-    <PackageVersion Include="Blazored.LocalStorage" Version="4.4.0" />
-    <PackageVersion Include="bunit" Version="1.25.1-preview" />
+    <PackageVersion Include="Blazored.LocalStorage" Version="4.5.0" />
+    <PackageVersion Include="bunit" Version="1.26.64" />
     <PackageVersion Include="Collatz" Version="2.0.0" />
-    <PackageVersion Include="coverlet.collector" Version="6.0.0" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.0-rc.2.23480.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0-rc.2.23480.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.0-rc.2.23480.2" />
-    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.0-rc.2.23480.2" />
+    <PackageVersion Include="coverlet.collector" Version="6.0.1" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.QuickGrid" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly" Version="8.0.2" />
+    <PackageVersion Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="8.0.2" />
     <PackageVersion Include="Microsoft.NET.Runtime.WebAssembly.Wasi.Sdk" Version="8.0.0-preview.6.23329.7" />
-    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0-preview-23531-01" />
-    <PackageVersion Include="Microsoft.NET.WebAssembly.Threading" Version="8.0.0-rc.2.23479.6" />
-    <PackageVersion Include="NUnit" Version="4.0.0-beta.1" />
+    <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
+    <PackageVersion Include="Microsoft.NET.WebAssembly.Threading" Version="8.0.0" />
+    <PackageVersion Include="NUnit" Version="4.1.0" />
     <PackageVersion Include="NUnit3TestAdapter" Version="4.5.0" />
-    <PackageVersion Include="NUnit.Analyzers" Version="3.9.0" />
-    <PackageVersion Include="Rocks" Version="7.1.4" />
+    <PackageVersion Include="NUnit.Analyzers" Version="4.0.1" />
+    <PackageVersion Include="Rocks" Version="8.0.0" />
     <PackageVersion Include="Spackle" Version="12.0.0" />
     <PackageVersion Include="Wasi.AspNetCore.Server.Native" Version="0.1.2-preview.10061" />
     <PackageVersion Include="Wasi.Sdk" Version="0.1.4-preview.10020" />
-    <PackageVersion Include="Wasmtime" Version="14.0.0" />
+    <PackageVersion Include="Wasmtime" Version="17.0.0" />
   </ItemGroup>
 </Project>

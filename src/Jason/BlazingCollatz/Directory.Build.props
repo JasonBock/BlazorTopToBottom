@@ -2,9 +2,8 @@
 	<PropertyGroup>
 		<AccelerateBuildsInVisualStudio>true</AccelerateBuildsInVisualStudio>
 		<Authors>Jason Bock</Authors>
-		<Copyright>Copyright © 2023</Copyright>
+		<Copyright>Copyright © 2024</Copyright>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<LangVersion>preview</LangVersion>
 		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
 		<Nullable>enable</Nullable>
 		<TargetFramework>net8.0</TargetFramework>
