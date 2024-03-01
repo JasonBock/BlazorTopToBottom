@@ -9,7 +9,6 @@
 	<ItemGroup>
 		<PackageReference Include="Blazored.LocalStorage" />
 		<PackageReference Include="Collatz" />
-		<PackageReference Include="Microsoft.AspNetCore.Components.QuickGrid" />
 		<PackageReference Include="Microsoft.AspNetCore.Components.Web" />
 		<PackageReference Include="Spackle" />
 	</ItemGroup>

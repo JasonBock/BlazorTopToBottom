@@ -28,6 +28,27 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ConsoleAppli
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazingCollatz.ApiApplication", "BlazingCollatz.ApiApplication\BlazingCollatz.ApiApplication.csproj", "{5D5158F7-C33B-4B7E-A542-1983E2F787F2}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "publish", "blazingcollatz.webassemblyhost\bin\Release\net8.0\browser-wasm\publish\", "{9D62EA0E-B3A0-4435-9E4F-74250EF1401C}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.8"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_57251"
+		Debug.AspNetCompiler.PhysicalPath = "blazingcollatz.webassemblyhost\bin\Release\net8.0\browser-wasm\publish\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57251\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_57251"
+		Release.AspNetCompiler.PhysicalPath = "blazingcollatz.webassemblyhost\bin\Release\net8.0\browser-wasm\publish\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_57251\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "57251"
+		SlnRelativePath = "blazingcollatz.webassemblyhost\bin\Release\net8.0\browser-wasm\publish\"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -70,6 +91,10 @@ Global
 		{5D5158F7-C33B-4B7E-A542-1983E2F787F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D5158F7-C33B-4B7E-A542-1983E2F787F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D5158F7-C33B-4B7E-A542-1983E2F787F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D62EA0E-B3A0-4435-9E4F-74250EF1401C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D62EA0E-B3A0-4435-9E4F-74250EF1401C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D62EA0E-B3A0-4435-9E4F-74250EF1401C}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D62EA0E-B3A0-4435-9E4F-74250EF1401C}.Release|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
