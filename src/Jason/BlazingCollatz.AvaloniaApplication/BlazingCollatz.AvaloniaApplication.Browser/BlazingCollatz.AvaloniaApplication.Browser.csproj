@@ -1,20 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-  <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
-    <RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
-    <WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
-    <OutputType>Exe</OutputType>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <WasmExtraFilesToDeploy Include="AppBundle\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Avalonia.Browser" Version="$(AvaloniaVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\BlazingCollatz.AvaloniaApplication\BlazingCollatz.AvaloniaApplication.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<RuntimeIdentifier>browser-wasm</RuntimeIdentifier>
+		<WasmMainJSPath>AppBundle\main.js</WasmMainJSPath>
+		<OutputType>Exe</OutputType>
+	</PropertyGroup>
+	<ItemGroup>
+		<WasmExtraFilesToDeploy Include="AppBundle\**" />
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="Avalonia.Browser" Version="11.0.9" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\BlazingCollatz.AvaloniaApplication\BlazingCollatz.AvaloniaApplication.csproj" />
+	</ItemGroup>
 </Project>
