@@ -1,0 +1,52 @@
+﻿@page "/counter"
+@rendermode InteractiveAuto
+@inject ActiveCircuitState activeCircuitState
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<div class="alert-info">@renderMode</div>
+
+<p role="status">Current count: @currentCount</p>
+
+@if (renderMode.Contains("interactive"))
+{
+    <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+}
+
+@code {
+    private int currentCount = 0;
+    private string renderMode = "unknown";
+
+    protected override void OnInitialized()
+    {
+        var isBrowser = OperatingSystem.IsBrowser();
+        if (isBrowser)
+            renderMode = "wasm-interactive";
+        else if (activeCircuitState.CircuitExists)
+            renderMode = "server-interactive";
+        else if (this.GetType().GetCustomAttributes(typeof(StreamRenderingAttribute), true).Length > 0)
+            renderMode = "server-static (streaming)";
+        else
+            renderMode = "server-static";
+    }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            var isBrowser = OperatingSystem.IsBrowser();
+            if (isBrowser)
+                renderMode = "wasm-interactive";
+            else
+                renderMode = "server-interactive";
+            StateHasChanged();
+        }
+    }
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
