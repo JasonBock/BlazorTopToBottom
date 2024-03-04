@@ -1,0 +1,57 @@
+﻿@page "/myComponent"
+@inject OutputLog logger;
+
+<h1>Lifecyle Events Component</h1>
+
+@foreach (var line in logger.Data)
+{
+  @line
+  <br />
+}
+
+<input type="text"/>
+
+@code {
+  bool rendered;
+
+  protected override void OnInitialized()
+  {
+    rendered = false;
+    logger.Log("-----------");
+    logger.Log("OnInitialized+");
+    base.OnInitialized();
+    logger.Log("OnInitialized-");
+  }
+
+  protected override void OnParametersSet()
+  {
+    logger.Log("OnParametersSet+");
+    base.OnParametersSet();
+    logger.Log("OnParametersSet-");
+  }
+
+  protected override bool ShouldRender()
+  {
+    logger.Log($"ShouldRender+");
+    var result = base.ShouldRender();
+    logger.Log($"ShouldRender: {result}");
+    return result;
+  }
+
+  protected override void OnAfterRender(bool firstRender)
+  {
+    logger.Log("OnAfterRender+");
+    base.OnAfterRender(firstRender);
+    logger.Log("OnAfterRender-");
+    if (!rendered)
+    {
+      rendered = true;
+      StateHasChanged();
+    }
+  }
+
+  private void ResetLog()
+  {
+    logger.Data.Clear();
+  }
+}

@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34004.107
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PageLifecycle", "PageLifecycle\PageLifecycle.csproj", "{F1B0D7E1-72AD-4779-9A20-2328BCB7DB6F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F1B0D7E1-72AD-4779-9A20-2328BCB7DB6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1B0D7E1-72AD-4779-9A20-2328BCB7DB6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1B0D7E1-72AD-4779-9A20-2328BCB7DB6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1B0D7E1-72AD-4779-9A20-2328BCB7DB6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A92F3BD7-5011-4767-830E-F1116B7EC7CB}
+	EndGlobalSection
+EndGlobal
