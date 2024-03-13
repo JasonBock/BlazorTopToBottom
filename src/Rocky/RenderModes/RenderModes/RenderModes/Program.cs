@@ -10,6 +10,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents()
     .AddInteractiveWebAssemblyComponents();
 
+builder.Services.AddTransient<RenderModeProvider>();
 builder.Services.AddScoped<ActiveCircuitState>();
 builder.Services.AddScoped(typeof(CircuitHandler), typeof(ActiveCircuitHandler));
 

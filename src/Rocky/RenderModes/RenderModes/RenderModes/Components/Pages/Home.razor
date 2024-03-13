@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject ActiveCircuitState activeCircuitState
+@inject RenderModes.Client.RenderModeProvider renderModeProvider
 
 <PageTitle>Home</PageTitle>
 
@@ -15,27 +15,15 @@ Welcome to your new app.
 
     protected override void OnInitialized()
     {
-        var isBrowser = OperatingSystem.IsBrowser();
-        if (isBrowser)
-            renderMode = "wasm-interactive";
-        else if (activeCircuitState.CircuitExists)
-            renderMode = "server-interactive";
-        else if (this.GetType().GetCustomAttributes(typeof(StreamRenderingAttribute), true).Length > 0)
-            renderMode = "server-static (streaming)";
-        else
-            renderMode = "server-static";
+        renderMode = renderModeProvider.GetRenderMode(this);
     }
 
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            var isBrowser = OperatingSystem.IsBrowser();
-            if (isBrowser)
-                renderMode = "wasm-interactive";
-            else
-                renderMode = "server-interactive";
-            StateHasChanged();
-        }
-    }
+    // protected override void OnAfterRender(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         renderMode = renderModeProvider.GetRenderMode();
+    //         StateHasChanged();
+    //     }
+    // }
 }

@@ -1,6 +1,6 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
-@inject ActiveCircuitState activeCircuitState
+@inject RenderModes.Client.RenderModeProvider renderModeProvider
 
 <PageTitle>Weather</PageTitle>
 
@@ -45,15 +45,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        var isBrowser = OperatingSystem.IsBrowser();
-        if (isBrowser)
-            renderMode = "wasm-interactive";
-        else if (activeCircuitState.CircuitExists)
-            renderMode = "server-interactive";
-        else if (this.GetType().GetCustomAttributes(typeof(StreamRenderingAttribute), true).Length > 0)
-            renderMode = "server-static (streaming)";
-        else
-            renderMode = "server-static";
+        renderMode = renderModeProvider.GetRenderMode(this);
 
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);
@@ -68,18 +60,18 @@ else
         }).ToArray();
     }
 
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            var isBrowser = OperatingSystem.IsBrowser();
-            if (isBrowser)
-                renderMode = "wasm-interactive";
-            else
-                renderMode = "server-interactive";
-            StateHasChanged();
-        }
-    }
+    // protected override void OnAfterRender(bool firstRender)
+    // {
+    //     if (firstRender)
+    //     {
+    //         var isBrowser = OperatingSystem.IsBrowser();
+    //         if (isBrowser)
+    //             renderMode = "wasm-interactive";
+    //         else
+    //             renderMode = "server-interactive";
+    //         StateHasChanged();
+    //     }
+    // }
 
     private class WeatherForecast
     {
