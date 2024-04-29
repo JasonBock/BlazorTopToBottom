@@ -35,6 +35,8 @@
     <PackageReference Include="Blazorise.DataGrid" Version="1.4.2" />
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.4.2" />
     <PackageReference Include="BuildBundlerMinifier" Version="3.2.449" />
+    <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
+    <PackageReference Include="DartSassBuilder" Version="1.1.0" />
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.2" />
     <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.0" />
   </ItemGroup>
