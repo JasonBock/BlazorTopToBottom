@@ -1,21 +1,19 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace RenderModes.Client
+namespace RenderModes
 {
     public class RenderModeProvider(ActiveCircuitState activeCircuitState)
     {
-        public string GetRenderMode(ComponentBase page)
+        public RenderMode GetRenderMode(ComponentBase page)
         {
-            string result;
+            RenderMode result = RenderMode.ServerStatic;
             var isBrowser = OperatingSystem.IsBrowser();
             if (isBrowser)
-                result = "wasm-interactive";
+                result = RenderMode.WebAssemblyInteractive;
             else if (activeCircuitState.CircuitExists)
-                result = "server-interactive";
+                result = RenderMode.ServerInteractive;
             else if (page.GetType().GetCustomAttributes(typeof(StreamRenderingAttribute), true).Length > 0)
-                result = "server-static (streaming)";
-            else
-                result = "server-static";
+                result = RenderMode.ServerStaticStreaming;
             return result;
         }
     }

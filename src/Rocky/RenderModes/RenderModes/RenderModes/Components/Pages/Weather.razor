@@ -1,6 +1,6 @@
 ﻿@page "/weather"
 @attribute [StreamRendering]
-@inject RenderModes.Client.RenderModeProvider renderModeProvider
+@inject RenderModes.RenderModeProvider renderModeProvider
 
 <PageTitle>Weather</PageTitle>
 
@@ -45,7 +45,7 @@ else
 
     protected override async Task OnInitializedAsync()
     {
-        renderMode = renderModeProvider.GetRenderMode(this);
+        renderMode = renderModeProvider.GetRenderMode(this).ToString();
 
         // Simulate asynchronous loading to demonstrate streaming rendering
         await Task.Delay(500);

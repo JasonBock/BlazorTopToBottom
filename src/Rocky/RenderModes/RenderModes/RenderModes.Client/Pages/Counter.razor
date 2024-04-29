@@ -1,6 +1,6 @@
 ﻿@page "/counter"
 @rendermode InteractiveAuto
-@inject RenderModes.Client.RenderModeProvider renderModeProvider
+@inject RenderModes.RenderModeProvider renderModeProvider
 
 <PageTitle>Counter</PageTitle>
 
@@ -10,14 +10,15 @@
 
 <p role="status">Current count: @currentCount</p>
 
-@if (renderMode.Contains("interactive"))
+@if (renderMode == RenderModes.RenderMode.ServerInteractive ||
+     renderMode == RenderModes.RenderMode.WebAssemblyInteractive)
 {
     <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 }
 
 @code {
     private int currentCount = 0;
-    private string renderMode = "unknown";
+    private RenderModes.RenderMode renderMode = RenderModes.RenderMode.Unknown;
 
     protected override void OnInitialized()
     {
@@ -30,9 +31,9 @@
     //     {
     //         var isBrowser = OperatingSystem.IsBrowser();
     //         if (isBrowser)
-    //             renderMode = "wasm-interactive";
+    //             renderMode = RenderModes.RenderMode.WebAssemblyInteractive;
     //         else
-    //             renderMode = "server-interactive";
+    //             renderMode = RenderModes.RenderMode.ServerInteractive;
     //         StateHasChanged();
     //     }
     // }

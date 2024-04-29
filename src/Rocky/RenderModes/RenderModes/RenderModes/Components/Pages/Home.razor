@@ -1,5 +1,5 @@
 ﻿@page "/"
-@inject RenderModes.Client.RenderModeProvider renderModeProvider
+@inject RenderModes.RenderModeProvider renderModeProvider
 
 <PageTitle>Home</PageTitle>
 
@@ -15,7 +15,7 @@ Welcome to your new app.
 
     protected override void OnInitialized()
     {
-        renderMode = renderModeProvider.GetRenderMode(this);
+        renderMode = renderModeProvider.GetRenderMode(this).ToString();
     }
 
     // protected override void OnAfterRender(bool firstRender)
