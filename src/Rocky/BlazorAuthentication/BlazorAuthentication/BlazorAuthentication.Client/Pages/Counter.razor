@@ -1,9 +1,12 @@
 ﻿@page "/counter"
 @rendermode InteractiveAuto
+@inject AuthenticationStateProvider AuthenticationStateProvider
 
 <PageTitle>Counter</PageTitle>
 
 <h1>Counter</h1>
+
+<p>User: @username</p>
 
 <p role="status">Current count: @currentCount</p>
 
@@ -11,6 +14,18 @@
 
 @code {
     private int currentCount = 0;
+    // [CascadingParameter]
+    // private Task<AuthenticationState> authenticationStateTask { get; set; }
+
+    private AuthenticationState? context;
+    private string? username;
+
+    protected override async Task OnInitializedAsync()
+    {
+        context = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        //context = await authenticationStateTask;
+        username = context?.User?.Identity?.Name;
+    }
 
     private void IncrementCount()
     {
