@@ -23,7 +23,7 @@ namespace EngineAnalyticsWebApp.Components.Calculations
         private string statusMessage = string.Empty;
         private string alertClass = string.Empty;
 
-        private async void HandleValidSubmit()
+        private async Task HandleValidSubmit()
         {
             if (automobile.Displacement is not null)
             {

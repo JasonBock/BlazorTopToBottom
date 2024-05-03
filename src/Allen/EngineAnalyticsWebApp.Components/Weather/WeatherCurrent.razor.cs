@@ -17,10 +17,10 @@ namespace EngineAnalyticsWebApp.Components.Weather
         protected override void OnInitialized()
         {
             subscription = weatherService.GetCurrentZipCodeStream()
-                .Subscribe(data => OnZipCodeDataLoaded(data));
+                .Subscribe(async data => await OnZipCodeDataLoaded(data));
         }
 
-        private async void OnZipCodeDataLoaded(string zipCode)
+        private async Task OnZipCodeDataLoaded(string zipCode)
         {
             currentWeatherData = await weatherDataService.GetCurrentWeather(zipCode);
             StateHasChanged(); // required as the async nature post-await not updating the UI until next action
