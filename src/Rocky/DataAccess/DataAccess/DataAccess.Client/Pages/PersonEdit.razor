@@ -1,0 +1,56 @@
+﻿@page "/personedit"
+@page "/personedit/{id:int}"
+@rendermode InteractiveAuto
+
+@using DataAccess.Dal
+@inject IDataAccess dal
+
+@inject RenderModeProvider renderModeProvider
+
+<h3>PersonEdit</h3>
+
+<div class="alert-info">@myRenderMode</div>
+
+@if (person != null)
+{
+    <div>@person.Name</div>
+    <div>@person.Address</div>
+    <div>@person.City</div>
+    <div>@person.State</div>
+    <div>@person.Zip</div>
+
+    <EditForm Model="person" OnSubmit="SavePerson">
+        <InputText @bind-Value="person.Name" />
+        <InputText @bind-Value="person.Address" />
+        <InputText @bind-Value="person.City" />
+        <InputText @bind-Value="person.State" />
+        <InputText @bind-Value="person.Zip" />
+        <button type="submit">Save</button>
+    </EditForm>
+}
+
+@code 
+{
+    [Parameter]
+    public int id { get; set; }
+    private PersonEntity? person;
+    private DataAccess.RenderMode myRenderMode = DataAccess.RenderMode.Unknown;
+
+    protected override async Task OnInitializedAsync()
+    {
+        myRenderMode = renderModeProvider.GetRenderMode(this);
+        if (renderModeProvider.IsInteractive(myRenderMode))
+        {
+            if (id != 0)
+            {
+                person = await dal.GetPersonById(id);
+            }
+        }
+    }
+
+    private void SavePerson()
+    {
+        if (person != null)
+            dal.SavePerson(person);
+    }
+}
