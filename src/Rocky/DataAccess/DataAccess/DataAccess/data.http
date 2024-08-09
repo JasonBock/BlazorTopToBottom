@@ -1,0 +1,17 @@
+# For more info on HTTP files go to https://aka.ms/vs/httpfile
+POST https://localhost:7138/api/SaveData
+
+Content-Type: application/json
+
+body :
+{
+  "id": 0,
+  "name": "Jason Bock",
+  "address": "123 Main",
+  "city": "Springfield",
+  "state": "IL",
+  "zip": "62701"
+}
+
+###
+GET https://localhost:7138/api/GetData?id=1
