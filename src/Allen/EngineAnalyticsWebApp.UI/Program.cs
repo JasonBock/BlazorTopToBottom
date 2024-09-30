@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);
 builder.RootComponents.Add<App>("#app");
+// Use the <HeadContent> component to add content to the <head> element of individual components
 builder.RootComponents.Add<HeadOutlet>("head::after");
 
 
