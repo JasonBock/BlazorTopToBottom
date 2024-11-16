@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net9.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
@@ -34,8 +34,8 @@
     <PackageReference Include="Blazorise.Icons.FontAwesome" Version="1.7.0" />
     <PackageReference Include="BuildWebCompiler2022" Version="1.14.10" />
     <PackageReference Include="DartSassBuilder" Version="1.1.0" />
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.11" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="8.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="9.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="9.0.0" />
   </ItemGroup>
 
   <ItemGroup>
