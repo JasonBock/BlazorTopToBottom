@@ -7,11 +7,12 @@
 <h1>Counter</h1>
 
 <div class="alert-info">@renderMode</div>
+<div class="alert-warning">@newRenderMode</div>
 
 <p role="status">Current count: @currentCount</p>
 
 @if (renderMode == RenderModes.RenderMode.ServerInteractive ||
-     renderMode == RenderModes.RenderMode.WebAssemblyInteractive)
+  renderMode == RenderModes.RenderMode.WebAssemblyInteractive)
 {
     <button class="btn btn-primary" @onclick="IncrementCount">Click me</button>
 }
@@ -19,10 +20,12 @@
 @code {
     private int currentCount = 0;
     private RenderModes.RenderMode renderMode = RenderModes.RenderMode.Unknown;
+    private string newRenderMode;
 
     protected override void OnInitialized()
     {
         renderMode = renderModeProvider.GetRenderMode(this);
+        newRenderMode = $"{RendererInfo.Name}, IsInteractive: {RendererInfo.IsInteractive}";
     }
 
     // protected override void OnAfterRender(bool firstRender)
