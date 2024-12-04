@@ -1,37 +1,23 @@
-﻿@if (automobileData == null)
+﻿@* @typeparam TItem *@
+
+@if (automobileData == null)
 {
     <p><em>Loading...</em></p>
 }
 else
 {
-    @*HMTL table leveraging Bootstrap CSS classes*@
+    @* HMTL table leveraging Bootstrap CSS classes *@
+    @* Leverages a Templated Blazor Component *@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th>Year</th>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Rear Wheel Horsepower</th>
-                <th>Flywheel Horsepower</th>
+                @TableHeader
             </tr>
         </thead>
         <tbody>
             @foreach (var auto in automobileData)
             {
-                <tr>
-                    <td>@auto.Year</td>
-                    <td>@auto.Make</td>
-                    <td>@auto.Model</td>
-                    @if (auto.EngineAnalytics != null)
-                    {
-                        <td>
-                            @auto.EngineAnalytics.RearWheelHorsepower
-                        </td>
-                        <td>
-                            @auto.EngineAnalytics.FlywheelHorsepower
-                        </td>
-                    }
-                </tr>
+                @RowTemplate(auto)
             }
         </tbody>
     </table>

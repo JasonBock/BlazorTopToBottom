@@ -9,7 +9,16 @@ namespace EngineAnalyticsWebApp.Components.Reporting
         [Inject]
         private IAutomobileDataService AutomobileDataService { get; set; } = default!;
 
+        [Parameter]
+        public RenderFragment<Automobile> RowTemplate { get; set; } = default!;
+
+        [Parameter]
+        public RenderFragment? TableHeader { get; set; } = default!;
+
         private IEnumerable<Automobile> automobileData = new List<Automobile>();
+
+        //[Parameter]
+        //public IEnumerable<TItem> Data { get; set; } = default!;
 
         protected override async Task OnInitializedAsync()
         {
